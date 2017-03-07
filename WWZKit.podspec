@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WWZKit"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "A short description of WWZKit."
 
     # s.description  = <<-DESC
@@ -45,22 +45,22 @@ Pod::Spec.new do |s|
   # s.default_subspecs = 'Model'
 
   s.subspec 'WWZKit' do |ss|
-	ss.subspec 'Model' do |sss|
-    	sss.source_files = "WWZKit/WWZKit/Model/*.{h,m}"
+	 ss.subspec 'Model' do |sss|
+    	sss.source_files = "WWZKit/Model/*.{h,m}"
   	end
   	ss.subspec 'Controller' do |sss|
-    	sss.source_files = "WWZKit/WWZKit/Controller/*.{h,m}"
+    	sss.source_files = "WWZKit/Controller/*.{h,m}"
   	end
   	ss.subspec 'View' do |sss|
-    	sss.source_files = "WWZKit/WWZKit/View/*.{h,m}"
-    	sss.dependency "WWZKit/WWZKit/Model"
+    	sss.source_files = "WWZKit/View/*.{h,m}"
+    	sss.dependency "WWZKit/Model"
   	end
   	ss.subspec 'Cell' do |sss|
-    	sss.source_files = "WWZKit/WWZKit/Cell/*.{h,m}"
+    	sss.source_files = "WWZKit/Cell/*.{h,m}"
   	end
   end
   
   s.subspec 'UIKit+WWZ' do |ss|
-    ss.source_files = "WWZKit/UIKit+WWZ/*.{h,m}"
+    ss.source_files = "UIKit+WWZ/*.{h,m}"
   end
 end

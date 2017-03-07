@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61BDE3AC06846479551E5C22 /* libPods-WWZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */; };
 		B094F1341E6E667900D5380E /* WWZKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1321E6E667900D5380E /* WWZKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F14E1E6E668D00D5380E /* CALayer+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13B1E6E668D00D5380E /* CALayer+WWZ.h */; };
 		B094F14F1E6E668D00D5380E /* CALayer+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F13C1E6E668D00D5380E /* CALayer+WWZ.m */; };
@@ -76,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CF8E33EF505E664CE7D049C /* Pods-WWZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WWZKit/Pods-WWZKit.release.xcconfig"; sourceTree = "<group>"; };
+		AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WWZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B094F12F1E6E667900D5380E /* WWZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B094F1321E6E667900D5380E /* WWZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWZKit.h; sourceTree = "<group>"; };
 		B094F1331E6E667900D5380E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		B094F1901E6E669800D5380E /* WZTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTimePickerView.m; sourceTree = "<group>"; };
 		B094F1911E6E669800D5380E /* WZTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZTipView.h; sourceTree = "<group>"; };
 		B094F1921E6E669800D5380E /* WZTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTipView.m; sourceTree = "<group>"; };
+		CE64AE6DBB3224F6F39161E9 /* Pods-WWZKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WWZKit/Pods-WWZKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,18 +155,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61BDE3AC06846479551E5C22 /* libPods-WWZKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4891820B638F5F2BC1A6152C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE64AE6DBB3224F6F39161E9 /* Pods-WWZKit.debug.xcconfig */,
+				3CF8E33EF505E664CE7D049C /* Pods-WWZKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A1BB2583D489A8822BF9293 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B094F1251E6E667900D5380E = {
 			isa = PBXGroup;
 			children = (
 				B094F13A1E6E668D00D5380E /* UIKit+WWZ */,
 				B094F1311E6E667900D5380E /* WWZKit */,
 				B094F1301E6E667900D5380E /* Products */,
+				4891820B638F5F2BC1A6152C /* Pods */,
+				6A1BB2583D489A8822BF9293 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,10 +362,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B094F1371E6E667900D5380E /* Build configuration list for PBXNativeTarget "WWZKit" */;
 			buildPhases = (
+				A527A6FD2554AFA8325443B8 /* [CP] Check Pods Manifest.lock */,
 				B094F12A1E6E667900D5380E /* Sources */,
 				B094F12B1E6E667900D5380E /* Frameworks */,
 				B094F12C1E6E667900D5380E /* Headers */,
 				B094F12D1E6E667900D5380E /* Resources */,
+				01A21D3F34E079ED4FBF16C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -394,6 +420,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01A21D3F34E079ED4FBF16C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WWZKit/Pods-WWZKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A527A6FD2554AFA8325443B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B094F12A1E6E667900D5380E /* Sources */ = {
@@ -536,6 +595,7 @@
 		};
 		B094F1381E6E667900D5380E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE64AE6DBB3224F6F39161E9 /* Pods-WWZKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -554,6 +614,7 @@
 		};
 		B094F1391E6E667900D5380E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CF8E33EF505E664CE7D049C /* Pods-WWZKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
