@@ -37,15 +37,5 @@
 //#import "WZTableHeaderView.h"
 //#import "WZCollectionReusableView.h"
 
-#import "UIView+WWZ.h"
-#import "UIColor+WWZ.h"
-#import "UIImage+WWZ.h"
-#import "CALayer+WWZ.h"
-#import "UIButton+WWZ.h"
-#import "UISwitch+WWZ.h"
-#import "UISlider+WWZ.h"
-#import "UIAlertView+WWZ.h"
-#import "UICollectionView+WWZ.h"
-
 
 #endif /* WWZKit_h */
