@@ -44,3 +44,5 @@ FOUNDATION_EXPORT const unsigned char WWZKitVersionString[];
 #import "WZReusableModel.h"
 #import "WZTableHeaderView.h"
 #import "WZCollectionReusableView.h"
+
+#import "UIKit+WWZ.h"

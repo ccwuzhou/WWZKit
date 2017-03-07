@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   	end
   	ss.subspec 'View' do |sss|
     	sss.source_files = "WWZKit/View/*.{h,m}"
-    	sss.dependency "WWZKit/Model"
+    	sss.dependency "WWZKit/WWZKit/Model"
   	end
   	ss.subspec 'Cell' do |sss|
     	sss.source_files = "WWZKit/Cell/*.{h,m}"

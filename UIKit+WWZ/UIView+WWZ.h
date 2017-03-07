@@ -48,79 +48,12 @@
 @end
 
 
-@interface UITableView (WWZ)
-
-+ (instancetype)wwz_tableViewWithFrame:(CGRect)frame dataSource:(id <UITableViewDataSource>)dataSource delegate:(id <UITableViewDelegate>)delegate;
-
-@end
-
-@interface UIScrollView (WWZ)
-
-+ (UIScrollView *)wwz_scrollViewWithFrame:(CGRect)frame contentSize:(CGSize)contentSize;
-
-@end
 
 
-@interface UINavigationBar (WWZ)
-/**
- *  设置背景颜色
- */
-- (void)wwz_setBackgroundColor:(UIColor *)color;
 
-/**
- *  设置文本颜色和字体
- */
-- (void)wwz_setTitleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont;
 
-/**
- *  去除导航栏下黑线
- */
-- (void)wwz_noShadowImage;
 
-@end
 
-@interface UIImageView (WWZ)
 
-+ (instancetype)wwz_imageViewWithImageName:(NSString *)imageName contentMode:(UIViewContentMode)contentMode;
 
-+ (instancetype)wwz_imageViewWithFrame:(CGRect)frame imageName:(NSString *)imageName contentMode:(UIViewContentMode)contentMode;
 
-/**
- *  圆形imageView
- *
- *  @param frame       frame
- *  @param imageName   imageName
- *  @param borderWidth borderWidth
- *  @param borderColor borderColor
- *
- *  @return 圆形imageView
- */
-+ (instancetype)wwz_imageViewWithFrame:(CGRect)frame
-                             imageName:(NSString *)imageName
-                           borderWidth:(CGFloat)borderWidth
-                           borderColor:(UIColor *)borderColor;
-@end
-
-@interface UILabel (WWZ)
-
-/**
- *  自适应尺寸的label
- */
-+ (UILabel *)wwz_labelWithText:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment numberOfLines:(NSInteger)numberOfLines;
-
-/**
- *  给定frame的一行label
- */
-+ (UILabel *)wwz_labelWithFrame:(CGRect)frame text:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment;
-
-/**
- *  给定frame的label
- */
-+ (UILabel *)wwz_labelWithFrame:(CGRect)frame text:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment numberOfLines:(NSInteger)numberOfLines;
-
-/**
- *  自适应
- */
-- (void)wwz_sizeToFitWithMaxSize:(CGSize)maxSize;
-
-@end

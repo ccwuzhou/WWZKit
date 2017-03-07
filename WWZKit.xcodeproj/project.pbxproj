@@ -8,77 +8,97 @@
 
 /* Begin PBXBuildFile section */
 		61BDE3AC06846479551E5C22 /* libPods-WWZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */; };
+		B04DFF771E6EAD5200B1DED7 /* UILabel+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B04DFF751E6EAD5200B1DED7 /* UILabel+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04DFF781E6EAD5200B1DED7 /* UILabel+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B04DFF761E6EAD5200B1DED7 /* UILabel+WWZ.m */; };
+		B04DFF7B1E6EADB600B1DED7 /* UINavigationBar+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B04DFF791E6EADB600B1DED7 /* UINavigationBar+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04DFF7C1E6EADB600B1DED7 /* UINavigationBar+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B04DFF7A1E6EADB600B1DED7 /* UINavigationBar+WWZ.m */; };
+		B04DFF7F1E6EADD700B1DED7 /* UIImageView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B04DFF7D1E6EADD700B1DED7 /* UIImageView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04DFF801E6EADD700B1DED7 /* UIImageView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B04DFF7E1E6EADD700B1DED7 /* UIImageView+WWZ.m */; };
+		B04DFF831E6EAE0300B1DED7 /* UITableView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B04DFF811E6EAE0300B1DED7 /* UITableView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04DFF841E6EAE0300B1DED7 /* UITableView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B04DFF821E6EAE0300B1DED7 /* UITableView+WWZ.m */; };
+		B04DFF871E6EAE2200B1DED7 /* UIScrollView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B04DFF851E6EAE2200B1DED7 /* UIScrollView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04DFF881E6EAE2200B1DED7 /* UIScrollView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B04DFF861E6EAE2200B1DED7 /* UIScrollView+WWZ.m */; };
 		B094F1341E6E667900D5380E /* WWZKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1321E6E667900D5380E /* WWZKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B094F14E1E6E668D00D5380E /* CALayer+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13B1E6E668D00D5380E /* CALayer+WWZ.h */; };
+		B094F14E1E6E668D00D5380E /* CALayer+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13B1E6E668D00D5380E /* CALayer+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F14F1E6E668D00D5380E /* CALayer+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F13C1E6E668D00D5380E /* CALayer+WWZ.m */; };
-		B094F1501E6E668D00D5380E /* UIAlertView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13D1E6E668D00D5380E /* UIAlertView+WWZ.h */; };
+		B094F1501E6E668D00D5380E /* UIAlertView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13D1E6E668D00D5380E /* UIAlertView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1511E6E668D00D5380E /* UIAlertView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F13E1E6E668D00D5380E /* UIAlertView+WWZ.m */; };
-		B094F1521E6E668D00D5380E /* UIButton+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13F1E6E668D00D5380E /* UIButton+WWZ.h */; };
+		B094F1521E6E668D00D5380E /* UIButton+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F13F1E6E668D00D5380E /* UIButton+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1531E6E668D00D5380E /* UIButton+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1401E6E668D00D5380E /* UIButton+WWZ.m */; };
-		B094F1541E6E668D00D5380E /* UICollectionView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1411E6E668D00D5380E /* UICollectionView+WWZ.h */; };
+		B094F1541E6E668D00D5380E /* UICollectionView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1411E6E668D00D5380E /* UICollectionView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1551E6E668D00D5380E /* UICollectionView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1421E6E668D00D5380E /* UICollectionView+WWZ.m */; };
-		B094F1561E6E668D00D5380E /* UIColor+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1431E6E668D00D5380E /* UIColor+WWZ.h */; };
+		B094F1561E6E668D00D5380E /* UIColor+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1431E6E668D00D5380E /* UIColor+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1571E6E668D00D5380E /* UIColor+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1441E6E668D00D5380E /* UIColor+WWZ.m */; };
-		B094F1581E6E668D00D5380E /* UIImage+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1451E6E668D00D5380E /* UIImage+WWZ.h */; };
+		B094F1581E6E668D00D5380E /* UIImage+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1451E6E668D00D5380E /* UIImage+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1591E6E668D00D5380E /* UIImage+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1461E6E668D00D5380E /* UIImage+WWZ.m */; };
-		B094F15A1E6E668D00D5380E /* UIKit+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1471E6E668D00D5380E /* UIKit+WWZ.h */; };
-		B094F15B1E6E668D00D5380E /* UISlider+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1481E6E668D00D5380E /* UISlider+WWZ.h */; };
+		B094F15A1E6E668D00D5380E /* UIKit+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1471E6E668D00D5380E /* UIKit+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B094F15B1E6E668D00D5380E /* UISlider+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1481E6E668D00D5380E /* UISlider+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F15C1E6E668D00D5380E /* UISlider+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1491E6E668D00D5380E /* UISlider+WWZ.m */; };
-		B094F15D1E6E668D00D5380E /* UISwitch+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F14A1E6E668D00D5380E /* UISwitch+WWZ.h */; };
+		B094F15D1E6E668D00D5380E /* UISwitch+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F14A1E6E668D00D5380E /* UISwitch+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F15E1E6E668D00D5380E /* UISwitch+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F14B1E6E668D00D5380E /* UISwitch+WWZ.m */; };
-		B094F15F1E6E668D00D5380E /* UIView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F14C1E6E668D00D5380E /* UIView+WWZ.h */; };
+		B094F15F1E6E668D00D5380E /* UIView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F14C1E6E668D00D5380E /* UIView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1601E6E668D00D5380E /* UIView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F14D1E6E668D00D5380E /* UIView+WWZ.m */; };
-		B094F1931E6E669800D5380E /* WZSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1621E6E669800D5380E /* WZSwipeButton.h */; };
+		B094F1931E6E669800D5380E /* WZSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1621E6E669800D5380E /* WZSwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1941E6E669800D5380E /* WZSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1631E6E669800D5380E /* WZSwipeButton.m */; };
-		B094F1951E6E669800D5380E /* WZSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1641E6E669800D5380E /* WZSwipeTableCell.h */; };
+		B094F1951E6E669800D5380E /* WZSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1641E6E669800D5380E /* WZSwipeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1961E6E669800D5380E /* WZSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1651E6E669800D5380E /* WZSwipeTableCell.m */; };
-		B094F1971E6E669800D5380E /* WZTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1661E6E669800D5380E /* WZTableViewCell.h */; };
+		B094F1971E6E669800D5380E /* WZTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1661E6E669800D5380E /* WZTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1981E6E669800D5380E /* WZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1671E6E669800D5380E /* WZTableViewCell.m */; };
-		B094F1991E6E669800D5380E /* WZCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1691E6E669800D5380E /* WZCollectionViewController.h */; };
+		B094F1991E6E669800D5380E /* WZCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1691E6E669800D5380E /* WZCollectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F19A1E6E669800D5380E /* WZCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F16A1E6E669800D5380E /* WZCollectionViewController.m */; };
-		B094F19B1E6E669800D5380E /* WZNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16B1E6E669800D5380E /* WZNavigationController.h */; };
+		B094F19B1E6E669800D5380E /* WZNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16B1E6E669800D5380E /* WZNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F19C1E6E669800D5380E /* WZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F16C1E6E669800D5380E /* WZNavigationController.m */; };
-		B094F19D1E6E669800D5380E /* WZSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16D1E6E669800D5380E /* WZSearchController.h */; };
+		B094F19D1E6E669800D5380E /* WZSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16D1E6E669800D5380E /* WZSearchController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F19E1E6E669800D5380E /* WZSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F16E1E6E669800D5380E /* WZSearchController.m */; };
-		B094F19F1E6E669800D5380E /* WZTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16F1E6E669800D5380E /* WZTabBarController.h */; };
+		B094F19F1E6E669800D5380E /* WZTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16F1E6E669800D5380E /* WZTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A01E6E669800D5380E /* WZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1701E6E669800D5380E /* WZTabBarController.m */; };
-		B094F1A11E6E669800D5380E /* WZTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1711E6E669800D5380E /* WZTableViewController.h */; };
+		B094F1A11E6E669800D5380E /* WZTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1711E6E669800D5380E /* WZTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A21E6E669800D5380E /* WZTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1721E6E669800D5380E /* WZTableViewController.m */; };
-		B094F1A31E6E669800D5380E /* WZViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1731E6E669800D5380E /* WZViewController.h */; };
+		B094F1A31E6E669800D5380E /* WZViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1731E6E669800D5380E /* WZViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A41E6E669800D5380E /* WZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1741E6E669800D5380E /* WZViewController.m */; };
-		B094F1A51E6E669800D5380E /* WZAngle.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1761E6E669800D5380E /* WZAngle.h */; };
+		B094F1A51E6E669800D5380E /* WZAngle.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1761E6E669800D5380E /* WZAngle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A61E6E669800D5380E /* WZAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1771E6E669800D5380E /* WZAngle.m */; };
-		B094F1A71E6E669800D5380E /* WZReusableModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1781E6E669800D5380E /* WZReusableModel.h */; };
+		B094F1A71E6E669800D5380E /* WZReusableModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1781E6E669800D5380E /* WZReusableModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A81E6E669800D5380E /* WZReusableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1791E6E669800D5380E /* WZReusableModel.m */; };
-		B094F1A91E6E669800D5380E /* SCSiriWaveformView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F17B1E6E669800D5380E /* SCSiriWaveformView.h */; };
+		B094F1A91E6E669800D5380E /* SCSiriWaveformView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F17B1E6E669800D5380E /* SCSiriWaveformView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1AA1E6E669800D5380E /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F17C1E6E669800D5380E /* SCSiriWaveformView.m */; };
-		B094F1AB1E6E669800D5380E /* WZActionSheetView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F17D1E6E669800D5380E /* WZActionSheetView.h */; };
+		B094F1AB1E6E669800D5380E /* WZActionSheetView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F17D1E6E669800D5380E /* WZActionSheetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1AC1E6E669800D5380E /* WZActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F17E1E6E669800D5380E /* WZActionSheetView.m */; };
-		B094F1AD1E6E669800D5380E /* WZButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F17F1E6E669800D5380E /* WZButton.h */; };
+		B094F1AD1E6E669800D5380E /* WZButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F17F1E6E669800D5380E /* WZButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1AE1E6E669800D5380E /* WZButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1801E6E669800D5380E /* WZButton.m */; };
-		B094F1AF1E6E669800D5380E /* WZCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1811E6E669800D5380E /* WZCollectionReusableView.h */; };
+		B094F1AF1E6E669800D5380E /* WZCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1811E6E669800D5380E /* WZCollectionReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1B01E6E669800D5380E /* WZCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1821E6E669800D5380E /* WZCollectionReusableView.m */; };
-		B094F1B11E6E669800D5380E /* WZInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1831E6E669800D5380E /* WZInputView.h */; };
+		B094F1B11E6E669800D5380E /* WZInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1831E6E669800D5380E /* WZInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1B21E6E669800D5380E /* WZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1841E6E669800D5380E /* WZInputView.m */; };
-		B094F1B31E6E669800D5380E /* WZMenuPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1851E6E669800D5380E /* WZMenuPopover.h */; };
+		B094F1B31E6E669800D5380E /* WZMenuPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1851E6E669800D5380E /* WZMenuPopover.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1B41E6E669800D5380E /* WZMenuPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1861E6E669800D5380E /* WZMenuPopover.m */; };
-		B094F1B51E6E669800D5380E /* WZShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1871E6E669800D5380E /* WZShowView.h */; };
+		B094F1B51E6E669800D5380E /* WZShowView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1871E6E669800D5380E /* WZShowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1B61E6E669800D5380E /* WZShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1881E6E669800D5380E /* WZShowView.m */; };
-		B094F1B71E6E669800D5380E /* WZTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1891E6E669800D5380E /* WZTabBar.h */; };
+		B094F1B71E6E669800D5380E /* WZTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1891E6E669800D5380E /* WZTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1B81E6E669800D5380E /* WZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F18A1E6E669800D5380E /* WZTabBar.m */; };
-		B094F1B91E6E669800D5380E /* WZTabBarButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F18B1E6E669800D5380E /* WZTabBarButton.h */; };
+		B094F1B91E6E669800D5380E /* WZTabBarButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F18B1E6E669800D5380E /* WZTabBarButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1BA1E6E669800D5380E /* WZTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F18C1E6E669800D5380E /* WZTabBarButton.m */; };
-		B094F1BB1E6E669800D5380E /* WZTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F18D1E6E669800D5380E /* WZTableHeaderView.h */; };
+		B094F1BB1E6E669800D5380E /* WZTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F18D1E6E669800D5380E /* WZTableHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1BC1E6E669800D5380E /* WZTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F18E1E6E669800D5380E /* WZTableHeaderView.m */; };
-		B094F1BD1E6E669800D5380E /* WZTimePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F18F1E6E669800D5380E /* WZTimePickerView.h */; };
+		B094F1BD1E6E669800D5380E /* WZTimePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F18F1E6E669800D5380E /* WZTimePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1BE1E6E669800D5380E /* WZTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1901E6E669800D5380E /* WZTimePickerView.m */; };
-		B094F1BF1E6E669800D5380E /* WZTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1911E6E669800D5380E /* WZTipView.h */; };
+		B094F1BF1E6E669800D5380E /* WZTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1911E6E669800D5380E /* WZTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1C01E6E669800D5380E /* WZTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1921E6E669800D5380E /* WZTipView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CF8E33EF505E664CE7D049C /* Pods-WWZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WWZKit/Pods-WWZKit.release.xcconfig"; sourceTree = "<group>"; };
 		AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WWZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04DFF751E6EAD5200B1DED7 /* UILabel+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WWZ.h"; sourceTree = "<group>"; };
+		B04DFF761E6EAD5200B1DED7 /* UILabel+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WWZ.m"; sourceTree = "<group>"; };
+		B04DFF791E6EADB600B1DED7 /* UINavigationBar+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+WWZ.h"; sourceTree = "<group>"; };
+		B04DFF7A1E6EADB600B1DED7 /* UINavigationBar+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+WWZ.m"; sourceTree = "<group>"; };
+		B04DFF7D1E6EADD700B1DED7 /* UIImageView+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WWZ.h"; sourceTree = "<group>"; };
+		B04DFF7E1E6EADD700B1DED7 /* UIImageView+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WWZ.m"; sourceTree = "<group>"; };
+		B04DFF811E6EAE0300B1DED7 /* UITableView+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WWZ.h"; sourceTree = "<group>"; };
+		B04DFF821E6EAE0300B1DED7 /* UITableView+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWZ.m"; sourceTree = "<group>"; };
+		B04DFF851E6EAE2200B1DED7 /* UIScrollView+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+WWZ.h"; sourceTree = "<group>"; };
+		B04DFF861E6EAE2200B1DED7 /* UIScrollView+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WWZ.m"; sourceTree = "<group>"; };
 		B094F12F1E6E667900D5380E /* WWZKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWZKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B094F1321E6E667900D5380E /* WWZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWZKit.h; sourceTree = "<group>"; };
 		B094F1331E6E667900D5380E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -214,25 +234,35 @@
 		B094F13A1E6E668D00D5380E /* UIKit+WWZ */ = {
 			isa = PBXGroup;
 			children = (
-				B094F13B1E6E668D00D5380E /* CALayer+WWZ.h */,
-				B094F13C1E6E668D00D5380E /* CALayer+WWZ.m */,
-				B094F13D1E6E668D00D5380E /* UIAlertView+WWZ.h */,
-				B094F13E1E6E668D00D5380E /* UIAlertView+WWZ.m */,
+				B094F1471E6E668D00D5380E /* UIKit+WWZ.h */,
+				B094F14C1E6E668D00D5380E /* UIView+WWZ.h */,
+				B094F14D1E6E668D00D5380E /* UIView+WWZ.m */,
 				B094F13F1E6E668D00D5380E /* UIButton+WWZ.h */,
 				B094F1401E6E668D00D5380E /* UIButton+WWZ.m */,
-				B094F1411E6E668D00D5380E /* UICollectionView+WWZ.h */,
-				B094F1421E6E668D00D5380E /* UICollectionView+WWZ.m */,
+				B04DFF751E6EAD5200B1DED7 /* UILabel+WWZ.h */,
+				B04DFF761E6EAD5200B1DED7 /* UILabel+WWZ.m */,
 				B094F1431E6E668D00D5380E /* UIColor+WWZ.h */,
 				B094F1441E6E668D00D5380E /* UIColor+WWZ.m */,
 				B094F1451E6E668D00D5380E /* UIImage+WWZ.h */,
 				B094F1461E6E668D00D5380E /* UIImage+WWZ.m */,
-				B094F1471E6E668D00D5380E /* UIKit+WWZ.h */,
 				B094F1481E6E668D00D5380E /* UISlider+WWZ.h */,
 				B094F1491E6E668D00D5380E /* UISlider+WWZ.m */,
 				B094F14A1E6E668D00D5380E /* UISwitch+WWZ.h */,
 				B094F14B1E6E668D00D5380E /* UISwitch+WWZ.m */,
-				B094F14C1E6E668D00D5380E /* UIView+WWZ.h */,
-				B094F14D1E6E668D00D5380E /* UIView+WWZ.m */,
+				B094F13B1E6E668D00D5380E /* CALayer+WWZ.h */,
+				B094F13C1E6E668D00D5380E /* CALayer+WWZ.m */,
+				B04DFF791E6EADB600B1DED7 /* UINavigationBar+WWZ.h */,
+				B04DFF7A1E6EADB600B1DED7 /* UINavigationBar+WWZ.m */,
+				B04DFF7D1E6EADD700B1DED7 /* UIImageView+WWZ.h */,
+				B04DFF7E1E6EADD700B1DED7 /* UIImageView+WWZ.m */,
+				B04DFF811E6EAE0300B1DED7 /* UITableView+WWZ.h */,
+				B04DFF821E6EAE0300B1DED7 /* UITableView+WWZ.m */,
+				B094F1411E6E668D00D5380E /* UICollectionView+WWZ.h */,
+				B094F1421E6E668D00D5380E /* UICollectionView+WWZ.m */,
+				B04DFF851E6EAE2200B1DED7 /* UIScrollView+WWZ.h */,
+				B04DFF861E6EAE2200B1DED7 /* UIScrollView+WWZ.m */,
+				B094F13D1E6E668D00D5380E /* UIAlertView+WWZ.h */,
+				B094F13E1E6E668D00D5380E /* UIAlertView+WWZ.m */,
 			);
 			path = "UIKit+WWZ";
 			sourceTree = "<group>";
@@ -253,18 +283,18 @@
 		B094F1681E6E669800D5380E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B094F1691E6E669800D5380E /* WZCollectionViewController.h */,
-				B094F16A1E6E669800D5380E /* WZCollectionViewController.m */,
-				B094F16B1E6E669800D5380E /* WZNavigationController.h */,
-				B094F16C1E6E669800D5380E /* WZNavigationController.m */,
-				B094F16D1E6E669800D5380E /* WZSearchController.h */,
-				B094F16E1E6E669800D5380E /* WZSearchController.m */,
 				B094F16F1E6E669800D5380E /* WZTabBarController.h */,
 				B094F1701E6E669800D5380E /* WZTabBarController.m */,
-				B094F1711E6E669800D5380E /* WZTableViewController.h */,
-				B094F1721E6E669800D5380E /* WZTableViewController.m */,
+				B094F16B1E6E669800D5380E /* WZNavigationController.h */,
+				B094F16C1E6E669800D5380E /* WZNavigationController.m */,
 				B094F1731E6E669800D5380E /* WZViewController.h */,
 				B094F1741E6E669800D5380E /* WZViewController.m */,
+				B094F1711E6E669800D5380E /* WZTableViewController.h */,
+				B094F1721E6E669800D5380E /* WZTableViewController.m */,
+				B094F1691E6E669800D5380E /* WZCollectionViewController.h */,
+				B094F16A1E6E669800D5380E /* WZCollectionViewController.m */,
+				B094F16D1E6E669800D5380E /* WZSearchController.h */,
+				B094F16E1E6E669800D5380E /* WZSearchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -348,6 +378,11 @@
 				B094F1AD1E6E669800D5380E /* WZButton.h in Headers */,
 				B094F1BF1E6E669800D5380E /* WZTipView.h in Headers */,
 				B094F15B1E6E668D00D5380E /* UISlider+WWZ.h in Headers */,
+				B04DFF871E6EAE2200B1DED7 /* UIScrollView+WWZ.h in Headers */,
+				B04DFF831E6EAE0300B1DED7 /* UITableView+WWZ.h in Headers */,
+				B04DFF7F1E6EADD700B1DED7 /* UIImageView+WWZ.h in Headers */,
+				B04DFF771E6EAD5200B1DED7 /* UILabel+WWZ.h in Headers */,
+				B04DFF7B1E6EADB600B1DED7 /* UINavigationBar+WWZ.h in Headers */,
 				B094F14E1E6E668D00D5380E /* CALayer+WWZ.h in Headers */,
 				B094F19D1E6E669800D5380E /* WZSearchController.h in Headers */,
 				B094F1931E6E669800D5380E /* WZSwipeButton.h in Headers */,
@@ -463,12 +498,17 @@
 				B094F1AE1E6E669800D5380E /* WZButton.m in Sources */,
 				B094F1B81E6E669800D5380E /* WZTabBar.m in Sources */,
 				B094F19E1E6E669800D5380E /* WZSearchController.m in Sources */,
+				B04DFF7C1E6EADB600B1DED7 /* UINavigationBar+WWZ.m in Sources */,
+				B04DFF781E6EAD5200B1DED7 /* UILabel+WWZ.m in Sources */,
 				B094F1A61E6E669800D5380E /* WZAngle.m in Sources */,
 				B094F1BC1E6E669800D5380E /* WZTableHeaderView.m in Sources */,
+				B04DFF841E6EAE0300B1DED7 /* UITableView+WWZ.m in Sources */,
 				B094F1B61E6E669800D5380E /* WZShowView.m in Sources */,
 				B094F1591E6E668D00D5380E /* UIImage+WWZ.m in Sources */,
 				B094F19A1E6E669800D5380E /* WZCollectionViewController.m in Sources */,
 				B094F1AA1E6E669800D5380E /* SCSiriWaveformView.m in Sources */,
+				B04DFF801E6EADD700B1DED7 /* UIImageView+WWZ.m in Sources */,
+				B04DFF881E6EAE2200B1DED7 /* UIScrollView+WWZ.m in Sources */,
 				B094F1B41E6E669800D5380E /* WZMenuPopover.m in Sources */,
 				B094F1571E6E668D00D5380E /* UIColor+WWZ.m in Sources */,
 				B094F1A41E6E669800D5380E /* WZViewController.m in Sources */,
@@ -605,7 +645,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWZKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.tijio.WWZKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -624,7 +666,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWZKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.tijio.WWZKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -650,6 +694,7 @@
 				B094F1391E6E667900D5380E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

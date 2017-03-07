@@ -10,13 +10,18 @@
 #define WWZKit_h
 
 #import "UIView+WWZ.h"
+#import "UIButton+WWZ.h"
+#import "UILabel+WWZ.h"
 #import "UIColor+WWZ.h"
 #import "UIImage+WWZ.h"
-#import "CALayer+WWZ.h"
-#import "UIButton+WWZ.h"
-#import "UISwitch+WWZ.h"
 #import "UISlider+WWZ.h"
-#import "UIAlertView+WWZ.h"
+#import "UISwitch+WWZ.h"
+#import "CALayer+WWZ.h"
+#import "UINavigationBar+WWZ.h"
+#import "UIImageView+WWZ.h"
+#import "UITableView+WWZ.h"
 #import "UICollectionView+WWZ.h"
+#import "UIScrollView+WWZ.h"
+#import "UIAlertView+WWZ.h"
 
 #endif /* WWZKit_h */
