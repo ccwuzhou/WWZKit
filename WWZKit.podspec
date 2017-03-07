@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WWZKit"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "A short description of WWZKit."
 
     # s.description  = <<-DESC
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/ccwuzhou/WWZKit.git", :tag => "#{s.version}" }
 
-  s.source_files  = "WWZKit/*.{h,m}"
+  s.source_files  = "WWZKit/WWZKit.h"
 
   # s.public_header_files = "WWZSocket/WWZSocket.h"
 
@@ -43,4 +43,23 @@ Pod::Spec.new do |s|
 
   s.framework  = "UIKit"
 
+  s.subspec 'Category' do |ss|
+    ss.source_files = "WWZKit/Category/*.{h,m}"
+  end
+  s.subspec 'Model' do |ss|
+    ss.source_files = "WWZKit/Model/*.{h,m}"
+    ss.dependency "WWZFoundation/Category"
+  end
+  s.subspec 'Controller' do |ss|
+    ss.source_files = "WWZKit/Controller/*.{h,m}"
+  end
+  s.subspec 'View' do |ss|
+    ss.source_files = "WWZKit/View/*.{h,m}"
+    ss.dependency "WWZKit/Category"
+  end
+  end
+  s.subspec 'Cell' do |ss|
+    ss.source_files = "WWZKit/Cell/*.{h,m}"
+    ss.dependency "WWZKit/Category"
+  end
 end
