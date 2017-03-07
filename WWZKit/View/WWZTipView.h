@@ -6,9 +6,9 @@
 //  Copyright © 2016年 cn.zgkjd. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WWZShowView.h"
 
-@interface WWZTipView : UIView
+@interface WWZTipView : WWZShowView
 
 /**
  *  show
@@ -26,10 +26,6 @@
                   lineSpacing:(CGFloat)lineSpacing
                  buttonTitles:(NSArray *)buttonTitles
              clickButtonBlock:(void(^)(int index))block;
-
-- (void)show;
-
-- (void)dismiss;
 
 /**
  *  title color

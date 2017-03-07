@@ -37,7 +37,7 @@ static NSTimeInterval kAnimationDuration = 0.3;
     
     // 背景view
     UIButton *containButton = [[UIButton alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    containButton.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    containButton.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     
     if (self.isTapEnabled) {
         [containButton addTarget:self action:@selector(wwz_dismiss) forControlEvents:UIControlEventTouchUpInside];

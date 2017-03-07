@@ -6,14 +6,9 @@
 //  Copyright (c) 2015年 WL. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WWZShowView.h"
 
-@interface WWZInputView : UIView
-
-/**
- *  输入文本
- */
-@property (nonatomic, strong, readonly) NSString *text;
+@interface WWZInputView : WWZShowView
 
 /**
  *  允许输入汉字长度
@@ -29,10 +24,10 @@
  *  @return input view
  */
 + (void)showInputViewWithTitle:(NSString *)title
-                                  text:(NSString *)text
-                           placeHolder:(NSString *)placeHolderText
-                          buttonTitles:(NSArray *)buttonTitles
-                         clickBtnIndex:(void(^)(WWZInputView *inputView, int index))block;
+                          text:(NSString *)text
+                   placeHolder:(NSString *)placeHolder
+                  buttonTitles:(NSArray *)buttonTitles
+                 clickButtonAtIndex:(void(^)(NSString *inputText, int index))block;
 /**
  *  input view
  *
@@ -44,14 +39,9 @@
  */
 - (instancetype)initWithTitle:(NSString *)title
                          text:(NSString *)text
-                  placeHolder:(NSString *)placeHolderText
+                  placeHolder:(NSString *)placeHolder
                  buttonTitles:(NSArray *)buttonTitles
-                clickBtnIndex:(void(^)(WWZInputView *inputView, int index))block;
-
-- (void)show;
-
-- (void)dismiss;
-
+                clickButtonAtIndex:(void(^)(NSString *inputText, int index))block;
 
 /**
  *  title color

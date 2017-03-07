@@ -12,6 +12,10 @@
 
 #define kLineColor [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1.0]
 
+static CGFloat const TIP_BUTTON_HTIGHT = 45.0;
+static int const BUTTON_TAG = 99;
+static CGFloat TIP_TITLE_LABEL_X = 20.0;
+
 @interface WWZTipView ()
 
 @property (nonatomic, strong) UIButton *containButton;
@@ -23,11 +27,13 @@
 @property (nonatomic, strong) NSMutableParagraphStyle *mParagraphStyle;
 
 @property (nonatomic, strong) NSMutableAttributedString *mAttributedString;
+
+@property (nonatomic, assign) CGFloat tipLabelY;
 @end
 
 @implementation WWZTipView
 
-static int const BUTTON_TAG = 99;
+
 
 + (void)showTipViewWithTitle:(NSString *)title
                    titleFont:(UIFont *)titleFont
@@ -36,7 +42,7 @@ static int const BUTTON_TAG = 99;
             clickButtonBlock:(void(^)(int index))block
 {
     WWZTipView *tipView = [[self alloc] initWithTitle:title titleFont:titleFont lineSpacing:lineSpacing buttonTitles:buttonTitles clickButtonBlock:block];
-    [tipView show];
+    [tipView wwz_showCompletion:nil];
 }
 
 - (instancetype)initWithTitle:(NSString *)title
@@ -45,12 +51,12 @@ static int const BUTTON_TAG = 99;
                  buttonTitles:(NSArray *)buttonTitles
              clickButtonBlock:(void(^)(int index))block
 {
-    self = [super init];
+    self = [super initWithFrame:CGRectZero showType:WWZShowViewTypeNone];
     
     if (self) {
         
-        if (buttonTitles.count > 2) {
-            return nil;
+        if (buttonTitles.count == 0 || buttonTitles.count > 2) {
+            return self;
         }
         _block = block;
         
@@ -58,6 +64,8 @@ static int const BUTTON_TAG = 99;
         self.layer.cornerRadius = 15;
         
         self.backgroundColor = [UIColor whiteColor];
+        
+        self.tapEnabled = NO;
         
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
         
@@ -74,63 +82,61 @@ static int const BUTTON_TAG = 99;
         }
         frame.origin.x = tipViewX;
         frame.size.width = screenSize.width-2*tipViewX;
-        
+        self.frame = frame;
         // label
-        UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.numberOfLines = 0;
+        [self p_addTitleLabelWithTitle:title font:titleFont lineSpace:lineSpacing];
         
-        self.mParagraphStyle.lineSpacing = lineSpacing;
-        
-        self.mAttributedString = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName: titleFont, NSForegroundColorAttributeName: [UIColor blackColor], NSParagraphStyleAttributeName: self.mParagraphStyle}];
-        
-        titleLabel.attributedText = self.mAttributedString;
-        
-        CGFloat titleLX = 20;
-        CGFloat titleLY = 20;
-        CGFloat titleLW = frame.size.width-titleLX*2;
-        CGFloat titleLH = [titleLabel textRectForBounds:CGRectMake(0, 0, titleLW, FLT_MAX) limitedToNumberOfLines:0].size.height;
-        
-        titleLY = titleLH < 30 ? titleLY + 2.5 : titleLY;
-        
-        titleLabel.frame = CGRectMake(titleLX, titleLY, titleLW, titleLH);
-        
-        // btn
-        CGFloat buttonH = 45;
-        frame.size.height = 2*titleLY + titleLH + buttonH;
+        frame.size.height = 2*self.tipLabelY + self.titleLabel.frame.size.height + TIP_BUTTON_HTIGHT;
         frame.origin.y = (screenSize.height-frame.size.height)*0.5;
         
         self.frame = frame;
         
-        [self addSubview:titleLabel];
-        _titleLabel = titleLabel;
-        
-        // contain button
-        _containButton = [[UIButton alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _containButton.backgroundColor = kColorFromRGBA(0, 0, 0, 0.3);
-        [_containButton addSubview:self];
-        
-        if (buttonTitles.count == 1) {
-            
-            UIButton *btn = [self buttonWithFrame:CGRectMake(0, self.frame.size.height-buttonH, self.frame.size.width, buttonH) title:buttonTitles[0] tag:0];
-            [self addSubview:btn];
-            
-        }else{
-            
-            for (int i = 0; i < buttonTitles.count; i++) {
-                
-                UIButton *btn = [self buttonWithFrame:CGRectMake(0+i*self.frame.size.width*0.5, self.frame.size.height-buttonH, self.frame.size.width*0.5, buttonH) title:buttonTitles[i] tag:i];
-                [self addSubview:btn];
-            }
-            
-            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width*0.5-0.25, self.frame.size.height-buttonH, 0.5, buttonH)];
-            lineView.backgroundColor = kLineColor;
-            [self addSubview:lineView];
-        }
+        // buttons
+        [self p_addBottomButtons:buttonTitles];
     }
     return self;
 }
 
+- (void)p_addTitleLabelWithTitle:(NSString *)title font:(UIFont *)font lineSpace:(CGFloat)lineSpace{
 
+    self.tipLabelY = 20.0;
+    
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.numberOfLines = 0;
+    
+    self.mParagraphStyle.lineSpacing = lineSpace;
+    
+    self.mAttributedString = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName: font, NSForegroundColorAttributeName: [UIColor blackColor], NSParagraphStyleAttributeName: self.mParagraphStyle}];
+    
+    titleLabel.attributedText = self.mAttributedString;
+    
+    CGFloat titleLW = self.frame.size.width-TIP_TITLE_LABEL_X*2;
+    CGFloat titleLH = [titleLabel textRectForBounds:CGRectMake(0, 0, titleLW, FLT_MAX) limitedToNumberOfLines:0].size.height;
+    
+    self.tipLabelY = titleLH < 30 ? self.tipLabelY + 2.5 : self.tipLabelY;
+    
+    titleLabel.frame = CGRectMake(TIP_TITLE_LABEL_X, self.tipLabelY, titleLW, titleLH);
+    
+    [self addSubview:titleLabel];
+    _titleLabel = titleLabel;
+}
+
+- (void)p_addBottomButtons:(NSArray *)buttonTitles{
+
+    for (int i = 0; i < buttonTitles.count; i++) {
+        
+        CGFloat buttonW = self.frame.size.width/buttonTitles.count;
+        
+        UIButton *btn = [self buttonWithFrame:CGRectMake(0+i*buttonW, self.frame.size.height-TIP_BUTTON_HTIGHT, buttonW, TIP_BUTTON_HTIGHT) title:buttonTitles[i] tag:i];
+        [self addSubview:btn];
+        
+        if (i == 1) {
+            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width*0.5-0.25, self.frame.size.height-TIP_BUTTON_HTIGHT, 0.5, TIP_BUTTON_HTIGHT)];
+            lineView.backgroundColor = kLineColor;
+            [self addSubview:lineView];
+        }
+    }
+}
 
 - (UIButton *)buttonWithFrame:(CGRect)frame title:(NSString *)title tag:(int)tag{
     
@@ -159,7 +165,7 @@ static int const BUTTON_TAG = 99;
     if (_block) {
         _block((int)sender.tag - BUTTON_TAG);
     }
-    [self dismiss];
+    [self wwz_dismiss];
 }
 
 /**
@@ -237,29 +243,6 @@ static int const BUTTON_TAG = 99;
         _mParagraphStyle.lineSpacing = 5;
     }
     return _mParagraphStyle;
-}
-
-
-- (void)show{
-    
-    _containButton.alpha = 0.0;
-    [[UIApplication sharedApplication].keyWindow addSubview:_containButton];
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        _containButton.alpha = 1.0;
-    }completion:^(BOOL finished) {
-        
-    }];
-}
-
-- (void)dismiss{
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        _containButton.alpha = 0.0;
-    }completion:^(BOOL finished) {
-        [_containButton removeFromSuperview];
-        _containButton = nil;
-    }];
 }
 
 

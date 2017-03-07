@@ -25,7 +25,7 @@
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UITextField *inputTextField;
 
-@property (nonatomic, copy) void(^clickBtnIndexBlock)(WWZInputView *, int);
+@property (nonatomic, copy) void(^clickBtnIndexBlock)(NSString *, int);
 
 @end
 
@@ -35,21 +35,27 @@ static int const BUTTON_TAG = 99;
 
 + (void)showInputViewWithTitle:(NSString *)title
                           text:(NSString *)text
-                   placeHolder:(NSString *)placeHolderText
+                   placeHolder:(NSString *)placeHolder
                   buttonTitles:(NSArray *)buttonTitles
-                 clickBtnIndex:(void(^)(WWZInputView *inputView, int index))block{
+            clickButtonAtIndex:(void(^)(NSString *inputText, int index))block{
     
-    WWZInputView *inputView = [[self alloc] initWithTitle:title text:text placeHolder:placeHolderText buttonTitles:buttonTitles clickBtnIndex:block];
-    [inputView show];
+    WWZInputView *inputView = [[self alloc] initWithTitle:title text:text placeHolder:placeHolder buttonTitles:buttonTitles clickButtonAtIndex:block];
+    [inputView wwz_showCompletion:nil];
 }
 
 - (instancetype)initWithTitle:(NSString *)title
                          text:(NSString *)text
-                  placeHolder:(NSString *)placeHolderText
+                  placeHolder:(NSString *)placeHolder
                  buttonTitles:(NSArray *)buttonTitles
-                clickBtnIndex:(void(^)(WWZInputView *inputView, int index))block{
+           clickButtonAtIndex:(void(^)(NSString *inputText, int index))block{
     
-    if (self = [super init]) {
+    if (self = [super initWithFrame:CGRectZero showType:WWZShowViewTypeNone]) {
+        
+        if (buttonTitles.count != 2) {
+            return self;
+        }
+        
+        self.tapEnabled = NO;
         
         self.backgroundColor = [UIColor whiteColor];
         
@@ -87,7 +93,7 @@ static int const BUTTON_TAG = 99;
         CGFloat inputTextFieldX = 20;
         
         UITextField *inputTextField = [[UITextField alloc] init];
-        inputTextField.placeholder = placeHolderText;
+        inputTextField.placeholder = placeHolder;
         inputTextField.returnKeyType = UIReturnKeyDone;
         inputTextField.borderStyle = UITextBorderStyleRoundedRect;
         inputTextField.delegate = self;
@@ -238,13 +244,6 @@ static int const BUTTON_TAG = 99;
         }
     }
 }
-/**
-  *  取输入框值
-  */
-- (NSString *)text{
-    
-    return _inputTextField.text;
-}
 
 - (void)setTextFieldMaxCount:(int)textFieldMaxCount{
     
@@ -255,50 +254,50 @@ static int const BUTTON_TAG = 99;
 
 #pragma mark - 显示
 
-- (void)show{
-
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    UIImageView *dimView = [[UIImageView alloc] initWithFrame:keyWindow.bounds];
-    dimView.image = [self wwz_backgroundGradientImageWithSize:keyWindow.bounds.size];
-    dimView.userInteractionEnabled = YES;
-    
-    [keyWindow addSubview:dimView];
-    [dimView addSubview:self];
-
-    dimView.alpha = 0.0;
-    
-    [_inputTextField becomeFirstResponder];
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        dimView.alpha = 1.0;
-    }completion:^(BOOL finished) {
-        
-    }];
-
-}
+//- (void)show{
+//
+//    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+//    
+//    UIImageView *dimView = [[UIImageView alloc] initWithFrame:keyWindow.bounds];
+//    dimView.image = [self wwz_backgroundGradientImageWithSize:keyWindow.bounds.size];
+//    dimView.userInteractionEnabled = YES;
+//    
+//    [keyWindow addSubview:dimView];
+//    [dimView addSubview:self];
+//
+//    dimView.alpha = 0.0;
+//    
+//    [_inputTextField becomeFirstResponder];
+//    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        dimView.alpha = 1.0;
+//    }completion:^(BOOL finished) {
+//        
+//    }];
+//
+//}
 #pragma mark - 隐藏
-- (void)dismiss{
-    
-    [_inputTextField resignFirstResponder];
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        self.superview.alpha = 0.0;
-    }completion:^(BOOL finished) {
-        
-        [self.superview removeFromSuperview];
-    }];
-}
+//- (void)dismiss{
+//    
+//    [_inputTextField resignFirstResponder];
+//    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        
+//        self.superview.alpha = 0.0;
+//    }completion:^(BOOL finished) {
+//        
+//        [self.superview removeFromSuperview];
+//    }];
+//}
 /**
  *  点击btn
  */
 - (void)clickButtonAtIndex:(UIButton *)sender{
     
     if (_clickBtnIndexBlock) {
-        _clickBtnIndexBlock(self, (int)sender.tag-BUTTON_TAG);
+        _clickBtnIndexBlock(self.inputTextField.text, (int)sender.tag-BUTTON_TAG);
     }
-    [self dismiss];
+    [self wwz_dismiss];
 }
 
 
