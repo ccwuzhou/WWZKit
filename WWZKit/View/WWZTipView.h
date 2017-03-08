@@ -11,39 +11,24 @@
 @interface WWZTipView : WWZShowView
 
 /**
- *  show
- */
-+ (void)showTipViewWithTitle:(NSString *)title
-                   titleFont:(UIFont *)titleFont
-                 lineSpacing:(CGFloat)lineSpacing
-                buttonTitles:(NSArray *)buttonTitles
-            clickButtonBlock:(void(^)(int index))block;
-/**
  *  buttonTitles count is no more then 2.
  */
-- (instancetype)initWithTitle:(NSString *)title
-                    titleFont:(UIFont *)titleFont
-                  lineSpacing:(CGFloat)lineSpacing
-                 buttonTitles:(NSArray *)buttonTitles
-             clickButtonBlock:(void(^)(int index))block;
+- (instancetype)initWithAttributedText:(NSAttributedString *)attributedText
+                          buttonTitles:(NSArray *)buttonTitles
+                      clickButtonBlock:(void(^)(int index))block;
 
 /**
- *  title color
- */
-- (void)setTitleColor:(UIColor *)titleColor;
-
-/**
- *  button color
+ *  button color, default is black
  */
 - (void)setButtonTitleColor:(UIColor *)buttonTitleColor;
 
 /**
- *  button font
+ *  button font， default is 16
  */
 - (void)setButtonTitleFont:(UIFont *)buttonTitleFont;
 
 /**
- *  button high back color
+ *  button high back color, default is (204, 204, 204, 1)
  */
 - (void)setButtonHighlightedBackgroundColor:(UIColor *)backgroundColor;
 @end

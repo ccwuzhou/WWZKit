@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  //extendedLayoutIncludesOpaqueBars = YES;
-    automaticallyAdjustsScrollViewInsets = NO;
+ *  automaticallyAdjustsScrollViewInsets = NO;
  */
 
 @interface WWZViewController : UIViewController

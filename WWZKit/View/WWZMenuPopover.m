@@ -20,7 +20,6 @@
 static NSTimeInterval kAnimationDuration = 0.3;
 
 #pragma mark - cell
-#pragma mark - cell
 
 @interface WWZMenuCell : UITableViewCell
 

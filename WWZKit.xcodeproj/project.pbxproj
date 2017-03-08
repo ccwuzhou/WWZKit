@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		61BDE3AC06846479551E5C22 /* libPods-WWZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */; };
-		B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DEE1E6F8E4A0005256A /* UIVisualEffectView+WWZ.h */; };
+		B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DEE1E6F8E4A0005256A /* UIVisualEffectView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0206DF11E6F8E4A0005256A /* UIVisualEffectView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B0206DEF1E6F8E4A0005256A /* UIVisualEffectView+WWZ.m */; };
-		B0206DF41E6F99A20005256A /* UITextField+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DF21E6F99A20005256A /* UITextField+WWZ.h */; };
+		B0206DF41E6F99A20005256A /* UITextField+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DF21E6F99A20005256A /* UITextField+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0206DF51E6F99A20005256A /* UITextField+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B0206DF31E6F99A20005256A /* UITextField+WWZ.m */; };
-		B0206DF81E6F9A3F0005256A /* UIBarButtonItem+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DF61E6F9A3F0005256A /* UIBarButtonItem+WWZ.h */; };
+		B0206DF81E6F9A3F0005256A /* UIBarButtonItem+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DF61E6F9A3F0005256A /* UIBarButtonItem+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0206DF91E6F9A3F0005256A /* UIBarButtonItem+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B0206DF71E6F9A3F0005256A /* UIBarButtonItem+WWZ.m */; };
 		B04DFF771E6EAD5200B1DED7 /* UILabel+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B04DFF751E6EAD5200B1DED7 /* UILabel+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B04DFF781E6EAD5200B1DED7 /* UILabel+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B04DFF761E6EAD5200B1DED7 /* UILabel+WWZ.m */; };
@@ -288,12 +288,12 @@
 		B094F1611E6E669800D5380E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B094F1661E6E669800D5380E /* WWZTableViewCell.h */,
+				B094F1671E6E669800D5380E /* WWZTableViewCell.m */,
 				B094F1621E6E669800D5380E /* WWZSwipeButton.h */,
 				B094F1631E6E669800D5380E /* WWZSwipeButton.m */,
 				B094F1641E6E669800D5380E /* WWZSwipeTableCell.h */,
 				B094F1651E6E669800D5380E /* WWZSwipeTableCell.m */,
-				B094F1661E6E669800D5380E /* WWZTableViewCell.h */,
-				B094F1671E6E669800D5380E /* WWZTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -369,7 +369,6 @@
 				B094F1BD1E6E669800D5380E /* WWZTimePickerView.h in Headers */,
 				B094F1B51E6E669800D5380E /* WWZShowView.h in Headers */,
 				B094F1A91E6E669800D5380E /* WWZSiriWaveformView.h in Headers */,
-				B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */,
 				B094F1341E6E667900D5380E /* WWZKit.h in Headers */,
 				B094F19F1E6E669800D5380E /* WWZTabBarController.h in Headers */,
 				B094F1971E6E669800D5380E /* WWZTableViewCell.h in Headers */,
@@ -384,7 +383,6 @@
 				B094F15D1E6E668D00D5380E /* UISwitch+WWZ.h in Headers */,
 				B094F1B91E6E669800D5380E /* WWZTabBarButton.h in Headers */,
 				B094F1991E6E669800D5380E /* WWZCollectionViewController.h in Headers */,
-				B0206DF41E6F99A20005256A /* UITextField+WWZ.h in Headers */,
 				B094F1561E6E668D00D5380E /* UIColor+WWZ.h in Headers */,
 				B094F1AB1E6E669800D5380E /* WWZActionSheetView.h in Headers */,
 				B094F15A1E6E668D00D5380E /* UIKit+WWZ.h in Headers */,
@@ -405,8 +403,10 @@
 				B04DFF7B1E6EADB600B1DED7 /* UINavigationBar+WWZ.h in Headers */,
 				B094F14E1E6E668D00D5380E /* CALayer+WWZ.h in Headers */,
 				B094F19D1E6E669800D5380E /* WWZSearchController.h in Headers */,
-				B094F1931E6E669800D5380E /* WWZSwipeButton.h in Headers */,
+				B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */,
+				B0206DF41E6F99A20005256A /* UITextField+WWZ.h in Headers */,
 				B0206DF81E6F9A3F0005256A /* UIBarButtonItem+WWZ.h in Headers */,
+				B094F1931E6E669800D5380E /* WWZSwipeButton.h in Headers */,
 				B094F1501E6E668D00D5380E /* UIAlertView+WWZ.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -60,22 +60,22 @@ typedef NS_OPTIONS(NSInteger, WWZTableViewCellStyle) {
 /**
  *  sublabel
  */
-@property (nonatomic, strong, readonly) UILabel *subLabel;
+@property (nonatomic, weak, readonly) UILabel *subLabel;
 
 /**
  *  右边label
  */
-@property (nonatomic, strong, readonly) UILabel *rightLabel;
+@property (nonatomic, weak, readonly) UILabel *rightLabel;
 
 /**
  *  右边switch
  */
-@property (nonatomic, strong, readonly) UISwitch *mySwitch;
+@property (nonatomic, weak, readonly) UISwitch *mySwitch;
 
 /**
  *  底部分割线
  */
-@property (nonatomic, strong, readonly) UIView *lineView;
+@property (nonatomic, weak, readonly) UIView *lineView;
 
 /**
  *  textLabel与subLabel的间距,default is 5.0

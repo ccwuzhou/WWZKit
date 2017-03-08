@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 #import <WWZKit/WWZKit.h>
-@interface ViewController ()
+
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -16,7 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.tableView = [UITableView wwz_tableViewWithFrame:self.view.bounds dataSource:self delegate:self];
+    [self.view addSubview:self.tableView];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 10 ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    WWZTableViewCell *cell = [WWZTableViewCell wwz_cellWithTableView:tableView style:WWZTableViewCellStyleSubAndSwitchView];
+    cell.textLabel.text = [NSString stringWithFormat:@"点击了点击了点击了点击了点击了点击了点击了点击了%d", indexPath.row];
+    cell.subLabel.text = [NSString stringWithFormat:@"点击了点击了点击了点击了点击了点击了点击了%d", indexPath.row];
+    cell.rightLabel.text = [NSString stringWithFormat:@"点击了点击了点击了点击了点击了点击了点击了%d", indexPath.row];
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    NSLog([NSString stringWithFormat:@"点击了%d", indexPath.row]);
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 

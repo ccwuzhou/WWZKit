@@ -23,5 +23,7 @@
 #import "UICollectionView+WWZ.h"
 #import "UIScrollView+WWZ.h"
 #import "UIAlertView+WWZ.h"
-
+#import "UIVisualEffectView+WWZ.h"
+#import "UIBarButtonItem+WWZ.h"
+#import "UITextField+WWZ.h"
 #endif /* WWZKit_h */

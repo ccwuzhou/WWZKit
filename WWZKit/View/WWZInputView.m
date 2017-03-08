@@ -8,17 +8,7 @@
 
 #import "WWZInputView.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define kScreenH [UIScreen mainScreen].bounds.size.height
-
-#define kAppWindow [UIApplication sharedApplication].delegate.window
-
-#define kInputTitleFont [UIFont boldSystemFontOfSize:20]
-#define kInputBtnFont [UIFont systemFontOfSize:18]
-
-#define kLineColor [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1.0]
+#define WWZ_INPUTVIEW_LINE_COLOR [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1.0]
 
 @interface WWZInputView()<UITextFieldDelegate>
 
@@ -33,23 +23,13 @@
 
 static int const BUTTON_TAG = 99;
 
-+ (void)showInputViewWithTitle:(NSString *)title
-                          text:(NSString *)text
-                   placeHolder:(NSString *)placeHolder
-                  buttonTitles:(NSArray *)buttonTitles
-            clickButtonAtIndex:(void(^)(NSString *inputText, int index))block{
-    
-    WWZInputView *inputView = [[self alloc] initWithTitle:title text:text placeHolder:placeHolder buttonTitles:buttonTitles clickButtonAtIndex:block];
-    [inputView wwz_showCompletion:nil];
-}
-
 - (instancetype)initWithTitle:(NSString *)title
                          text:(NSString *)text
                   placeHolder:(NSString *)placeHolder
                  buttonTitles:(NSArray *)buttonTitles
            clickButtonAtIndex:(void(^)(NSString *inputText, int index))block{
     
-    if (self = [super initWithFrame:CGRectZero showType:WWZShowViewTypeNone]) {
+    if (self = [super initWithFrame:CGRectZero]) {
         
         if (buttonTitles.count != 2) {
             return self;
@@ -64,10 +44,10 @@ static int const BUTTON_TAG = 99;
         _textFieldMaxCount = INT_MAX;
         
         
-        CGFloat inputViewW = !isPad ? 250*kScreenW/320 : 425;
-        CGFloat inputViewH = !isPad ? 150 : 183;
+        CGFloat inputViewW = UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ? 250*[UIScreen mainScreen].bounds.size.width/320 : 425;
+        CGFloat inputViewH = UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ? 150 : 183;
         
-        self.frame = CGRectMake((kScreenW-inputViewW)*0.5, kScreenH*0.25, inputViewW, inputViewH);
+        self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-inputViewW)*0.5, [UIScreen mainScreen].bounds.size.height*0.25, inputViewW, inputViewH);
         
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 15;
@@ -80,7 +60,7 @@ static int const BUTTON_TAG = 99;
         titleLabel.text = title;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.textColor = [UIColor blackColor];
-        titleLabel.font = kInputTitleFont;
+        titleLabel.font = [UIFont boldSystemFontOfSize:20];
         [titleLabel sizeToFit];
         CGRect titleLFrame = titleLabel.frame;
         CGFloat kSpaceY = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 15:20);
@@ -116,7 +96,7 @@ static int const BUTTON_TAG = 99;
         }
         
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(viewSize.width*0.5-0.25, viewSize.height-kBtnH, 0.5, kBtnH)];
-        lineView.backgroundColor = kLineColor;
+        lineView.backgroundColor = WWZ_INPUTVIEW_LINE_COLOR;
         [self addSubview:lineView];
     }
     return self;
@@ -130,7 +110,7 @@ static int const BUTTON_TAG = 99;
     btn.frame = frame;
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[self imageWithColor:kLineColor size:frame.size alpha:1] forState:UIControlStateHighlighted];
+    [btn setBackgroundImage:[self imageWithColor:WWZ_INPUTVIEW_LINE_COLOR size:frame.size alpha:1] forState:UIControlStateHighlighted];
     btn.titleLabel.font = [UIFont systemFontOfSize:16];
     
     btn.tag = BUTTON_TAG+tag;
@@ -138,7 +118,7 @@ static int const BUTTON_TAG = 99;
     [btn addTarget:self action:@selector(clickButtonAtIndex:) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 0.5)];
-    lineView.backgroundColor = kLineColor;
+    lineView.backgroundColor = WWZ_INPUTVIEW_LINE_COLOR;
     [btn addSubview:lineView];
     
     return btn;
@@ -251,44 +231,6 @@ static int const BUTTON_TAG = 99;
         _textFieldMaxCount = textFieldMaxCount;
     }
 }
-
-#pragma mark - 显示
-
-//- (void)show{
-//
-//    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-//    
-//    UIImageView *dimView = [[UIImageView alloc] initWithFrame:keyWindow.bounds];
-//    dimView.image = [self wwz_backgroundGradientImageWithSize:keyWindow.bounds.size];
-//    dimView.userInteractionEnabled = YES;
-//    
-//    [keyWindow addSubview:dimView];
-//    [dimView addSubview:self];
-//
-//    dimView.alpha = 0.0;
-//    
-//    [_inputTextField becomeFirstResponder];
-//    
-//    [UIView animateWithDuration:0.3 animations:^{
-//        dimView.alpha = 1.0;
-//    }completion:^(BOOL finished) {
-//        
-//    }];
-//
-//}
-#pragma mark - 隐藏
-//- (void)dismiss{
-//    
-//    [_inputTextField resignFirstResponder];
-//    
-//    [UIView animateWithDuration:0.3 animations:^{
-//        
-//        self.superview.alpha = 0.0;
-//    }completion:^(BOOL finished) {
-//        
-//        [self.superview removeFromSuperview];
-//    }];
-//}
 /**
  *  点击btn
  */
@@ -297,7 +239,7 @@ static int const BUTTON_TAG = 99;
     if (_clickBtnIndexBlock) {
         _clickBtnIndexBlock(self.inputTextField.text, (int)sender.tag-BUTTON_TAG);
     }
-    [self wwz_dismiss];
+    [self wwz_dismissCompletion:nil];
 }
 
 

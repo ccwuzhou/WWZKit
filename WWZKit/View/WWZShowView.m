@@ -8,27 +8,41 @@
 
 #import "WWZShowView.h"
 
-static NSTimeInterval kAnimationDuration = 0.3;
-
-
-@interface WWZShowView ()
-
-@property (nonatomic, assign) WWZShowViewType showType;
-
-@end
-
 @implementation WWZShowView
 
-- (instancetype)initWithFrame:(CGRect)frame showType:(WWZShowViewType)showType
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self p_initSetup];
+    }
+    return self;
+}
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self p_initSetup];
+    }
+    return self;
+}
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor whiteColor];
-        self.showType = showType;
-        self.tapEnabled = YES;
+        [self p_initSetup];
     }
     return self;
+}
+
+- (void)p_initSetup{
+
+    self.backgroundColor = [UIColor whiteColor];
+    self.animateType = WWZShowViewAnimateTypeAlpha;
+    self.tapEnabled = YES;
+    self.backColor = [UIColor colorWithWhite:0 alpha:0.1];
+    self.animateDuration = 0.3;
 }
 
 #pragma mark - 显示
@@ -37,7 +51,7 @@ static NSTimeInterval kAnimationDuration = 0.3;
     
     // 背景view
     UIButton *containButton = [[UIButton alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    containButton.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
+    containButton.backgroundColor = self.backColor;
     
     if (self.isTapEnabled) {
         [containButton addTarget:self action:@selector(wwz_dismiss) forControlEvents:UIControlEventTouchUpInside];
@@ -50,12 +64,12 @@ static NSTimeInterval kAnimationDuration = 0.3;
     
     containButton.alpha = 0;
     
-    [self p_originalTransform:self.showType];
+    [self p_originalTransform:self.animateType];
     
-    [UIView animateWithDuration:kAnimationDuration
+    [UIView animateWithDuration:self.animateDuration
                      animations:^{
                          
-                         [self p_endTransform:self.showType];
+                         [self p_endTransform:self.animateType];
                      }
                      completion:completion];
     
@@ -64,40 +78,43 @@ static NSTimeInterval kAnimationDuration = 0.3;
 
 #pragma mark - 隐藏
 
-- (void)wwz_dismiss{
+- (void)wwz_dismissCompletion:(void (^)(BOOL finished))completion{
 
-    [UIView animateWithDuration:kAnimationDuration
+    [UIView animateWithDuration:self.animateDuration
                      animations:^{
                          
-                         [self p_originalTransform:self.showType];
+                         [self p_originalTransform:self.animateType];
                      }
                      completion:^(BOOL finished) {
                          
                          [self.superview removeFromSuperview];
                          [self removeFromSuperview];
-
+                         
+                         if (completion) {
+                             completion(finished);
+                         }
                      }];
 }
 
 #pragma mark - 私有方法
-- (void)p_originalTransform:(WWZShowViewType)showType{
+- (void)p_originalTransform:(WWZShowViewAnimateType)animateType{
 
     self.superview.alpha = 0.0;
     
-    switch (showType) {
-        case WWZShowViewTypeNone:
+    switch (animateType) {
+        case WWZShowViewAnimateTypeAlpha:
             self.alpha = 0.0;
             break;
-        case WWZShowViewTypeTop:
+        case WWZShowViewAnimateTypeFromTop:
             self.transform = CGAffineTransformMakeTranslation(0, -self.frame.size.height);
             break;
-        case WWZShowViewTypeLeft:
+        case WWZShowViewAnimateTypeFromLeft:
             self.transform = CGAffineTransformMakeTranslation(-self.frame.size.width, 0);
             break;
-        case WWZShowViewTypeBottom:
+        case WWZShowViewAnimateTypeFromBottom:
             self.transform = CGAffineTransformMakeTranslation(0, self.superview.frame.size.height);
             break;
-        case WWZShowViewTypeRight:
+        case WWZShowViewAnimateTypeFromRight:
             self.transform = CGAffineTransformMakeTranslation(self.superview.frame.size.width, 0);
             break;
         default:
@@ -105,12 +122,12 @@ static NSTimeInterval kAnimationDuration = 0.3;
     }
 }
 
-- (void)p_endTransform:(WWZShowViewType)showType{
+- (void)p_endTransform:(WWZShowViewAnimateType)animateType{
     
     self.superview.alpha = 1.0;
     
-    switch (showType) {
-        case WWZShowViewTypeNone:
+    switch (animateType) {
+        case WWZShowViewAnimateTypeAlpha:
             self.alpha = 1.0;
             break;
         default:
@@ -118,8 +135,8 @@ static NSTimeInterval kAnimationDuration = 0.3;
             break;
     }
 }
-- (void)dealloc{
-    NSLog(@"%s", __func__);
-}
+//- (void)dealloc{
+//    NSLog(@"%s", __func__);
+//}
 
 @end

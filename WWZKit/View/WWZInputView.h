@@ -16,19 +16,6 @@
 @property (nonatomic, assign) int textFieldMaxCount;
 
 /**
- *
- *  @param title           title
- *  @param text            text
- *  @param placeHolderText placeHolder text
- *
- *  @return input view
- */
-+ (void)showInputViewWithTitle:(NSString *)title
-                          text:(NSString *)text
-                   placeHolder:(NSString *)placeHolder
-                  buttonTitles:(NSArray *)buttonTitles
-                 clickButtonAtIndex:(void(^)(NSString *inputText, int index))block;
-/**
  *  input view
  *
  *  @param title           title

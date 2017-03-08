@@ -8,39 +8,6 @@
 
 #import "WWZTableViewCell.h"
 
-#define kRightSpacing (self.accessoryType == UITableViewCellAccessoryNone ? 16.0 : 0)
-
-#define kColorFromRGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
-
-#define kCellBgColor kColorFromRGBA(255, 255, 255, 1)
-
-#define kCellSelectBgColor kColorFromRGBA(217, 217, 217, 1)
-
-// title color
-#define kTitleColor kColorFromRGBA(51, 51, 51, 1)
-// subTitle color
-#define kSubTitleColor kColorFromRGBA(153, 153, 153, 1)
-// rightTitle color
-#define kRightTitleColor kColorFromRGBA(153, 153, 153, 1)
-// 分割线 color
-#define kBottomLineColor kColorFromRGBA(0, 0, 0, 0.1)
-// switch on color
-#define kDefaultThemeColor kColorFromRGBA(51, 184, 252, 1)
-
-#define kTitleFont (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? [UIFont systemFontOfSize:21]:[UIFont systemFontOfSize:16])
-
-#define kSubTitleFont (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? [UIFont systemFontOfSize:18]:[UIFont systemFontOfSize:14])
-
-#define kRightTitleFont (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? [UIFont systemFontOfSize:18]:[UIFont systemFontOfSize:14])
-
-#define kDefaultImageViewX (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 25.0 : 15.0)
-
-#define kDefaultImageViewY (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 15.0 : 7.0)
-
-//#define kRightAccessorySwitchWidth ([UIScreen mainScreen].bounds.size.width == 414.0 ? 71 : 66)
-
-static float const kBottomLineHeight = 0.5;
-
 @interface WWZTableViewCell ()
 
 
@@ -48,18 +15,9 @@ static float const kBottomLineHeight = 0.5;
 
 @implementation WWZTableViewCell
 
-/**
- *  为只读属性生成成员变量
- */
-@synthesize lineView = _lineView;
-@synthesize subLabel = _subLabel;
-@synthesize rightLabel = _rightLabel;
-@synthesize mySwitch = _mySwitch;
-
-
 + (instancetype)wwz_cellWithTableView:(UITableView *)tableView style:(WWZTableViewCellStyle)style{
     
-    static NSString *reuseIdentifier = @"reuseCellID";
+    static NSString *reuseIdentifier = @"REUSE_CELL_ID";
     WWZTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
     if (!cell) {
@@ -74,128 +32,95 @@ static float const kBottomLineHeight = 0.5;
     
     if (self) {
         
-        // 设置cell
-        [self setUpCell];
+        // set cell
+        [self p_setupCell];
         
-        // 根据类型添加视图
-        switch (style) {
-            case WWZTableViewCellStyleDefault:{
-                
-            }
-                break;
-            case WWZTableViewCellStyleSubTitle:{
-                
-                [self.contentView addSubview:self.subLabel];
-            }
-                break;
-            case WWZTableViewCellStyleRightTitle:{
-                
-                [self.contentView addSubview:self.rightLabel];
-            }
-                break;
-                
-            case WWZTableViewCellStyleSwitchView:{
-                
-                self.accessoryView = self.mySwitch;
-            }
-                break;
-            case WWZTableViewCellStyleSubAndRightTitle:{
-                
-                [self.contentView addSubview:self.subLabel];
-                [self.contentView addSubview:self.rightLabel];
-            }
-                break;
-            case WWZTableViewCellStyleSubAndSwitchView:{
-                
-                [self.contentView addSubview:self.subLabel];
-                self.accessoryView = self.mySwitch;
-            }
-                break;
-                
-            default:
-                break;
-        }
+        // add sub label
+        [self p_addSubTitleLabelWithStyle:style];
+        
+        // add right label
+        [self p_addRightTitleLabelWithStyle:style];
+        
+        // add switch
+        [self p_addSwitchViewWithStyle:style];
         
     }
     return self;
 }
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        
-    }
-    return self;
-}
+#pragma mark - 私有方法
 /**
  *  设置cell
  */
-- (void)setUpCell{
+- (void)p_setupCell{
     
-    self.backgroundColor = kCellBgColor;
+    self.backgroundColor = [UIColor whiteColor];
     
     // textLabel
     self.textLabel.backgroundColor = [UIColor clearColor];
-    self.textLabel.font = kTitleFont;
-    self.textLabel.textColor = kTitleColor;
+    self.textLabel.font = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? [UIFont systemFontOfSize:21]:[UIFont systemFontOfSize:16]);
+    self.textLabel.textColor = [UIColor blackColor];
     
     //设置选中的背景
     self.selectedBackgroundView = [[UIView alloc] init];
-    self.selectedBackgroundView.backgroundColor = kCellSelectBgColor;
+    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:217.0/255.0 green:217.0/255.0 blue:217.0/255.0 alpha:1];
     
     //设置cell的分隔线
-    [self.contentView addSubview:self.lineView];
+    [self p_addLineView];
 }
 
-#pragma mark - getter
-- (UIView *)lineView{
+- (void)p_addSubTitleLabelWithStyle:(WWZTableViewCellStyle)style{
     
-    if (!_lineView) {
-        
-        _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = kBottomLineColor;
+    if (!(style & WWZTableViewCellStyleSubTitle)) {
+        return;
     }
-    return _lineView;
+
+    _titleSpaceH = 5;
+    UILabel *subLabel = [[UILabel alloc] init];
+    subLabel.font = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? [UIFont systemFontOfSize:18]:[UIFont systemFontOfSize:14]);
+    subLabel.textColor = [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1];
+    subLabel.textAlignment = NSTextAlignmentLeft;
+    subLabel.numberOfLines = 1;
+    [self.contentView addSubview:subLabel];
+    
+    _subLabel = subLabel;
 }
 
-- (UILabel *)subLabel{
+- (void)p_addRightTitleLabelWithStyle:(WWZTableViewCellStyle)style{
     
-    if (!_subLabel) {
-        
-        _titleSpaceH = 5;
-        _subLabel = [[UILabel alloc] init];
-        _subLabel.font = kSubTitleFont;
-        _subLabel.textColor = kSubTitleColor;
-        _subLabel.textAlignment = NSTextAlignmentLeft;
-        _subLabel.numberOfLines = 1;
-        
+    if (!(style & WWZTableViewCellStyleRightTitle)) {
+        return;
     }
-    return _subLabel;
+    
+    UILabel *rightLabel = [[UILabel alloc] init];
+    rightLabel.font = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? [UIFont systemFontOfSize:18]:[UIFont systemFontOfSize:14]);
+    rightLabel.textColor = [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1];
+    rightLabel.textAlignment = NSTextAlignmentRight;
+    rightLabel.numberOfLines = 1;
+    [self.contentView addSubview:rightLabel];
+    
+    _rightLabel = rightLabel;
 }
 
-- (UILabel *)rightLabel{
+- (void)p_addSwitchViewWithStyle:(WWZTableViewCellStyle)style{
     
-    if (!_rightLabel) {
-        
-        _rightLabel = [[UILabel alloc] init];
-        _rightLabel.font = kRightTitleFont;
-        _rightLabel.textColor = kRightTitleColor;
-        _rightLabel.textAlignment = NSTextAlignmentRight;
-        _rightLabel.numberOfLines = 1;
-        
+    if (!(style & WWZTableViewCellStyleSwitchView)) {
+        return;
     }
-    return _rightLabel;
+    
+    UISwitch *mySwitch = [[UISwitch alloc] init];
+    [mySwitch addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
+    self.accessoryView = mySwitch;
+    
+    _mySwitch = mySwitch;
 }
 
-- (UISwitch *)mySwitch{
+- (void)p_addLineView{
+
+    UIView *lineView = [[UIView alloc] init];
+    lineView.backgroundColor = [UIColor colorWithRed:217.0/255.0 green:217.0/255.0 blue:217.0/255.0 alpha:1];
+    [self.contentView addSubview:lineView];
     
-    if (!_mySwitch) {
-        
-        _mySwitch = [[UISwitch alloc] init];
-        _mySwitch.onTintColor = kDefaultThemeColor;
-        [_mySwitch addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
-    }
-    return _mySwitch;
+    _lineView = lineView;
 }
 
 #pragma mark - 点击switch
@@ -216,7 +141,9 @@ static float const kBottomLineHeight = 0.5;
     CGFloat contentViewW = self.contentView.frame.size.width;
     
     // imageView
-    CGFloat imageWH = height-kDefaultImageViewY*2;
+    CGFloat imageViewX = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 25.0 : 15.0);
+    CGFloat imageViewY = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 15.0 : 7.0);
+    CGFloat imageWH = height-imageViewY*2;
     
     CGSize imageSize = CGSizeMake(imageWH, imageWH);
     
@@ -231,7 +158,7 @@ static float const kBottomLineHeight = 0.5;
             self.imageView.contentMode = UIViewContentModeCenter;
             imageSize = self.imageView.image.size;
         }
-        self.imageView.frame = (CGRect){{kDefaultImageViewX, (height-imageSize.height)*0.5}, imageSize};
+        self.imageView.frame = (CGRect){{imageViewX, (height-imageSize.height)*0.5}, imageSize};
     }
     
     // textLabel
@@ -251,6 +178,8 @@ static float const kBottomLineHeight = 0.5;
     textLabelFrame.size.width = textLabelFrame.size.width < textLMaxWidth ? textLabelFrame.size.width : textLMaxWidth;
     
     // 右边label
+    CGFloat right_space = (self.accessoryType == UITableViewCellAccessoryNone ? 16.0 : 0);
+    
     if (_rightLabel.text.length>0) {
         
         [_rightLabel sizeToFit];
@@ -259,7 +188,7 @@ static float const kBottomLineHeight = 0.5;
         CGFloat rightLMinWidth = 60.0;
         
         // right label max width
-        CGFloat rightLMaxWidth = contentViewW - CGRectGetMaxX(textLabelFrame) - textLRightSpace - kRightSpacing;
+        CGFloat rightLMaxWidth = contentViewW - CGRectGetMaxX(textLabelFrame) - textLRightSpace - right_space;
         
         CGRect rightLabelFrame = _rightLabel.frame;
         
@@ -271,7 +200,7 @@ static float const kBottomLineHeight = 0.5;
             rightLabelFrame.size.width = rightLabelFrame.size.width < rightLMaxWidth ? rightLabelFrame.size.width : rightLMaxWidth;
         }
         
-        rightLabelFrame.origin.x = contentViewW - rightLabelFrame.size.width-kRightSpacing;
+        rightLabelFrame.origin.x = contentViewW - rightLabelFrame.size.width-right_space;
         rightLabelFrame.origin.y = (height-rightLabelFrame.size.height)*0.5;
         
         _rightLabel.frame = rightLabelFrame;
@@ -305,7 +234,7 @@ static float const kBottomLineHeight = 0.5;
     // bottomLine
     CGFloat leftX = self.isLastCell ? 0 : self.textLabel.frame.origin.x;
     
-    _lineView.frame = CGRectMake(leftX, height-kBottomLineHeight, width-leftX, kBottomLineHeight);
+    _lineView.frame = CGRectMake(leftX, height-0.5, width-leftX, 0.5);
     
 }
 
