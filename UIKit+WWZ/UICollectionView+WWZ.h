@@ -9,10 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UICollectionViewFlowLayout (WWZ)
-/**
- *  default flowLayout
- */
-+ (instancetype)wwz_defaultFlowlayout;
 
 /**
  *  UICollectionViewFlowLayout
@@ -53,15 +49,6 @@
 @interface UICollectionView (WWZ)
 
 /**
- *  default collectionView
- *
- *  @param frame frame
- *
- *  @return UICollectionView
- */
-+ (instancetype)wwz_collectionViewWithFrame:(CGRect)frame;
-
-/**
  *  collectionView
  *
  *  @param frame      frame
@@ -70,16 +57,5 @@
  *  @return UICollectionView
  */
 + (instancetype)wwz_collectionViewWithFrame:(CGRect)frame flowLayout:(UICollectionViewFlowLayout *)flowLayout;
-
-/**
- *  自适应itemSize的collectionView
- *
- *  @param frame           frame
- *  @param itemCount       itemCount
- *  @param flowLayout      flowLayout
- *
- *  @return UICollectionView
- */
-+ (instancetype)wwz_collectionViewWithFrame:(CGRect)frame itemCount:(NSInteger)itemCount flowLayout:(UICollectionViewFlowLayout *)flowLayout;
 
 @end

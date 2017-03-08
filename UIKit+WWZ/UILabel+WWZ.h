@@ -16,18 +16,8 @@
 + (UILabel *)wwz_labelWithText:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment numberOfLines:(NSInteger)numberOfLines;
 
 /**
- *  给定frame的一行label
- */
-+ (UILabel *)wwz_labelWithFrame:(CGRect)frame text:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment;
-
-/**
  *  给定frame的label
  */
 + (UILabel *)wwz_labelWithFrame:(CGRect)frame text:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment numberOfLines:(NSInteger)numberOfLines;
-
-/**
- *  自适应
- */
-- (void)wwz_sizeToFitWithMaxSize:(CGSize)maxSize;
 
 @end

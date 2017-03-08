@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (WZ)
+@interface UIImage (WWZ)
 /**
  *  bundle 中的图片
  *
@@ -42,7 +42,10 @@
  *  @return UIImage
  */
 - (UIImage *)wwz_scaleToTargetSize:(CGSize)targetSize;
-
+/**
+ *  启动图片
+ */
++ (UIImage *)wwz_launchImageWithOrientation:(UIInterfaceOrientation)orientation;
 
 #pragma mark - 九切片
 

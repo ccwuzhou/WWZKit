@@ -43,6 +43,10 @@
 // 与父视图的中心y对齐
 - (void)wwz_alignCenterY;
 
+/**
+ *  纯色view
+ */
+- (instancetype)initWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor;
 @end
 
 
@@ -67,22 +71,6 @@
  */
 - (void)wwz_panPeformBlock:(void(^)(UIPanGestureRecognizer *pan))block;
 
-#pragma mark - launch image
-
-/**
- *  获取启动图片并保持
- *
- *  @param duration duration后启动图片消失
- *
- *  @return 启动图片
- */
-+ (UIImageView *)wwz_launchImageAnimateWithDuration:(NSTimeInterval)duration;
-/**
- *  启动图片消失动画
- *
- *  @param launchView 启动图片
- */
-+ (void)wwz_dismissLaunchImageView:(UIView *)launchView;
 @end
 
 

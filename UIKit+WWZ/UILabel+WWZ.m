@@ -21,13 +21,6 @@
 }
 
 /**
- *  给定frame的一行label
- */
-+ (UILabel *)wwz_labelWithFrame:(CGRect)frame text:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment{
-    
-    return [self wwz_labelWithFrame:frame text:text font:font tColor:tColor alignment:alignment numberOfLines:1];
-}
-/**
  *  给定frame的label
  */
 + (UILabel *)wwz_labelWithFrame:(CGRect)frame text:(NSString *)text font:(UIFont *)font tColor:(UIColor *)tColor alignment:(NSTextAlignment)alignment numberOfLines:(NSInteger)numberOfLines{
@@ -51,7 +44,5 @@
     CGSize sizeToFit = CGSizeMake(ceilf(rectToFit.size.width)+2, ceilf(rectToFit.size.height));
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, sizeToFit.width, sizeToFit.height*0.6);
 }
-
-
 
 @end

@@ -12,36 +12,36 @@
 /**
  *  设置title
  */
--(void)wwz_setNTitle:(NSString *)nTitle;
--(void)wwz_setSTitle:(NSString *)sTitle;
--(void)wwz_setNTitle:(NSString *)nTitle sTitle:(NSString *)sTitle;
+- (void)wwz_setNTitle:(NSString *)nTitle;
+- (void)wwz_setSTitle:(NSString *)sTitle;
+- (void)wwz_setNTitle:(NSString *)nTitle sTitle:(NSString *)sTitle;
 
 /**
  *  设置title color
  */
--(void)wwz_setNColor:(UIColor *)nColor;
--(void)wwz_setSColor:(UIColor *)sColor;
--(void)wwz_setNColor:(UIColor *)nColor hColor:(UIColor *)hColor;
--(void)wwz_setNColor:(UIColor *)nColor sColor:(UIColor *)sColor;
--(void)wwz_setNColor:(UIColor *)nColor hColor:(UIColor *)hColor sColor:(UIColor *)sColor;
+- (void)wwz_setNColor:(UIColor *)nColor;
+- (void)wwz_setSColor:(UIColor *)sColor;
+- (void)wwz_setNColor:(UIColor *)nColor hColor:(UIColor *)hColor;
+- (void)wwz_setNColor:(UIColor *)nColor sColor:(UIColor *)sColor;
+- (void)wwz_setNColor:(UIColor *)nColor hColor:(UIColor *)hColor sColor:(UIColor *)sColor;
 
 /**
  *  设置image
  */
--(void)wwz_setNImage:(NSString *)nImage;
--(void)wwz_setSImage:(NSString *)sImage;
--(void)wwz_setNImage:(NSString *)nImage hImage:(NSString *)hImage;
--(void)wwz_setNImage:(NSString *)nImage sImage:(NSString *)sImage;
--(void)wwz_setNImage:(NSString *)nImage hImage:(NSString *)hImage sImage:(NSString *)sImage;
+- (void)wwz_setNImage:(NSString *)nImage;
+- (void)wwz_setSImage:(NSString *)sImage;
+- (void)wwz_setNImage:(NSString *)nImage hImage:(NSString *)hImage;
+- (void)wwz_setNImage:(NSString *)nImage sImage:(NSString *)sImage;
+- (void)wwz_setNImage:(NSString *)nImage hImage:(NSString *)hImage sImage:(NSString *)sImage;
 
 /**
  *  设置背景image
  */
--(void)wwz_setNBImage:(NSString *)nBImage;
--(void)wwz_setHBImage:(NSString *)hBImage;
--(void)wwz_setNBImage:(NSString *)nBImage hBImage:(NSString *)hBImage;
--(void)wwz_setNBImage:(NSString *)nBImage sBImage:(NSString *)sBImage;
--(void)wwz_setNBImage:(NSString *)nBImage hBImage:(NSString *)hBImage sBImage:(NSString *)sBImage;
+- (void)wwz_setNBImage:(NSString *)nBImage;
+- (void)wwz_setHBImage:(NSString *)hBImage;
+- (void)wwz_setNBImage:(NSString *)nBImage hBImage:(NSString *)hBImage;
+- (void)wwz_setNBImage:(NSString *)nBImage sBImage:(NSString *)sBImage;
+- (void)wwz_setNBImage:(NSString *)nBImage hBImage:(NSString *)hBImage sBImage:(NSString *)sBImage;
 /**
  *  文字（正常）
  */
@@ -71,11 +71,6 @@
  *  文字和图片（正常和选中）
  */
 + (instancetype)wwz_buttonWithFrame:(CGRect)frame nTitle:(NSString *)nTitle sTitle:(NSString *)sTitle tFont:(UIFont *)tFont nColor:(UIColor *)nColor sColor:(UIColor *)sColor nImage:(NSString *)nImage sImage:(NSString *)sImage;
-
-/**
- *  上下排版
- */
-+ (instancetype)wwz_buttonWithFrame:(CGRect)frame nTitle:(NSString *)nTitle nColor:(UIColor *)nColor tFontSize:(CGFloat)tFontSize nImage:(NSString *)nImage sImage:(NSString *)sImage marginH:(CGFloat)marginH;
 
 /**
  *  设置字体大小

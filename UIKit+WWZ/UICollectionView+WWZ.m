@@ -102,18 +102,6 @@
 
 @implementation UICollectionView (WWZ)
 
-
-/**
- *  default collectionView
- *
- *  @param frame frame
- *
- *  @return UICollectionView
- */
-+ (instancetype)wwz_collectionViewWithFrame:(CGRect)frame{
-    
-    return [self wwz_collectionViewWithFrame:frame flowLayout:[UICollectionViewFlowLayout wwz_defaultFlowlayout]];
-}
 /**
  *  collectionView
  *
@@ -132,59 +120,5 @@
     
     return collectionView;
 }
-/**
- *  自适应itemSize的collectionView
- *
- *  @param frame           frame
- *  @param itemCount       itemCount
- *  @param flowLayout      flowLayout
- *
- *  @return UICollectionView
- */
-+ (instancetype)wwz_collectionViewWithFrame:(CGRect)frame itemCount:(NSInteger)itemCount flowLayout:(UICollectionViewFlowLayout *)flowLayout{
-    
-    CGFloat itemWH = 0.0;
-    
-    UIEdgeInsets insets = flowLayout.sectionInset;
-    CGFloat lineSpace = flowLayout.minimumLineSpacing;
-    CGFloat itemSpace = flowLayout.minimumInteritemSpacing;
-    
-    if (flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal) {// 水平滚动
-        
-        itemWH = (frame.size.width-insets.left-insets.right-(itemCount-1)*lineSpace)/itemCount;
-        
-        if (itemWH>frame.size.height-insets.top-insets.bottom&&itemWH<frame.size.height) {
-            CGFloat top = (frame.size.height-itemWH)*0.5;
-            insets = UIEdgeInsetsMake(top, insets.left, top, insets.right);
-            
-        }else if (itemWH>frame.size.height){
-            itemWH = frame.size.height;
-            insets = UIEdgeInsetsMake(0, insets.left, 0, insets.right);
-            lineSpace = (frame.size.width-insets.left-insets.right-itemCount*itemWH)/(itemCount-1);
-        }
-        
-    }else{// 竖直滚动
-        
-        itemWH = (frame.size.width-insets.left-insets.right-(itemCount-1)*itemSpace)/itemCount;
-        
-        if (itemWH>frame.size.height-insets.top-insets.bottom&&itemWH<frame.size.height) {
-            CGFloat top = (frame.size.height-itemWH)*0.5;
-            insets = UIEdgeInsetsMake(top, insets.left, top, insets.right);
-            
-        }else if (itemWH>frame.size.height){
-            itemWH = frame.size.height;
-            insets = UIEdgeInsetsMake(0, insets.left, 0, insets.right);
-            itemSpace = (frame.size.width-insets.left-insets.right-itemCount*itemWH)/(itemCount-1);
-        }
-    }
-    itemWH = floorf(itemWH);
-    
-    flowLayout.minimumLineSpacing = lineSpace;//行间距(最小值)
-    flowLayout.minimumInteritemSpacing = itemSpace;//item间距(最小值)
-    flowLayout.itemSize = CGSizeMake(itemWH, itemWH);//item的大小
-    flowLayout.sectionInset = insets;//设置section的边距
-    
-    return [self wwz_collectionViewWithFrame:frame flowLayout:flowLayout];
-    
-}
+
 @end

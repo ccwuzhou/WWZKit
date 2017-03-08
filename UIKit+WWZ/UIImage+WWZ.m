@@ -10,7 +10,7 @@
 
 #import <Accelerate/Accelerate.h>
 
-@implementation UIImage (WZ)
+@implementation UIImage (WWZ)
 
 + (instancetype)wwz_imageWithContentImageName:(NSString *)imageName{
     
@@ -79,9 +79,50 @@
     UIGraphicsEndImageContext();
     
     return newImage;
-    
 }
+/**
+ *  启动图片
+ */
++ (UIImage *)wwz_launchImageWithOrientation:(UIInterfaceOrientation)orientation{
 
+    CGSize viewSize = CGSizeZero;
+    
+    NSString *viewOrientation = @"";
+    
+    switch (orientation) {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown:{
+        
+            viewSize = [UIScreen mainScreen].bounds.size;
+            
+            viewOrientation = @"Portrait";
+        }
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:{
+        
+            viewSize = CGSizeMake([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
+            
+            viewOrientation = @"Landscape";
+        }
+            break;
+        default:
+            break;
+    }
+
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    
+    for (NSDictionary* dict in imagesDict){
+        
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]]){
+
+            return [UIImage imageNamed:dict[@"UILaunchImageName"]];
+        }
+    }
+    return nil;
+}
 #pragma mark - 九切片
 + (instancetype)wwz_stretchImageWithImageName:(NSString *)imageName
 {
