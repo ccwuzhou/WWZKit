@@ -41,7 +41,7 @@
     self.backgroundColor = [UIColor whiteColor];
     self.animateType = WWZShowViewAnimateTypeAlpha;
     self.tapEnabled = YES;
-    self.backColor = [UIColor colorWithWhite:0 alpha:0.1];
+    self.backColor = [UIColor colorWithWhite:0 alpha:0.3];
     self.animateDuration = 0.3;
 }
 

@@ -368,5 +368,17 @@ static int const BUTTON_TAG = 99;
     
     return image;
 }
+- (void)wwz_showCompletion:(void (^)(BOOL))completion{
+    
+    [self.inputTextField becomeFirstResponder];
+    
+    [super wwz_showCompletion:completion];
+}
 
+- (void)wwz_dismissCompletion:(void (^)(BOOL))completion{
+    
+    [self.inputTextField resignFirstResponder];
+    
+    [super wwz_dismissCompletion:completion];
+}
 @end

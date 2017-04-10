@@ -59,7 +59,7 @@
 		B094F19F1E6E669800D5380E /* WWZTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F16F1E6E669800D5380E /* WWZTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A01E6E669800D5380E /* WWZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1701E6E669800D5380E /* WWZTabBarController.m */; };
 		B094F1A11E6E669800D5380E /* WWZTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1711E6E669800D5380E /* WWZTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B094F1A21E6E669800D5380E /* WZTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1721E6E669800D5380E /* WZTableViewController.m */; };
+		B094F1A21E6E669800D5380E /* WWZTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1721E6E669800D5380E /* WWZTableViewController.m */; };
 		B094F1A31E6E669800D5380E /* WWZViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1731E6E669800D5380E /* WWZViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B094F1A41E6E669800D5380E /* WWZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094F1741E6E669800D5380E /* WWZViewController.m */; };
 		B094F1A51E6E669800D5380E /* WWZAngle.h in Headers */ = {isa = PBXBuildFile; fileRef = B094F1761E6E669800D5380E /* WWZAngle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -148,7 +148,7 @@
 		B094F16F1E6E669800D5380E /* WWZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZTabBarController.h; sourceTree = "<group>"; };
 		B094F1701E6E669800D5380E /* WWZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZTabBarController.m; sourceTree = "<group>"; };
 		B094F1711E6E669800D5380E /* WWZTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZTableViewController.h; sourceTree = "<group>"; };
-		B094F1721E6E669800D5380E /* WZTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZTableViewController.m; sourceTree = "<group>"; };
+		B094F1721E6E669800D5380E /* WWZTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZTableViewController.m; sourceTree = "<group>"; };
 		B094F1731E6E669800D5380E /* WWZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZViewController.h; sourceTree = "<group>"; };
 		B094F1741E6E669800D5380E /* WWZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZViewController.m; sourceTree = "<group>"; };
 		B094F1761E6E669800D5380E /* WWZAngle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZAngle.h; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 				B094F1731E6E669800D5380E /* WWZViewController.h */,
 				B094F1741E6E669800D5380E /* WWZViewController.m */,
 				B094F1711E6E669800D5380E /* WWZTableViewController.h */,
-				B094F1721E6E669800D5380E /* WZTableViewController.m */,
+				B094F1721E6E669800D5380E /* WWZTableViewController.m */,
 				B094F1691E6E669800D5380E /* WWZCollectionViewController.h */,
 				B094F16A1E6E669800D5380E /* WWZCollectionViewController.m */,
 				B094F16D1E6E669800D5380E /* WWZSearchController.h */,
@@ -547,7 +547,7 @@
 				B094F1511E6E668D00D5380E /* UIAlertView+WWZ.m in Sources */,
 				B094F1B01E6E669800D5380E /* WWZCollectionReusableView.m in Sources */,
 				B094F1961E6E669800D5380E /* WWZSwipeTableCell.m in Sources */,
-				B094F1A21E6E669800D5380E /* WZTableViewController.m in Sources */,
+				B094F1A21E6E669800D5380E /* WWZTableViewController.m in Sources */,
 				B094F1601E6E668D00D5380E /* UIView+WWZ.m in Sources */,
 				B094F1A81E6E669800D5380E /* WWZReusableModel.m in Sources */,
 				B094F14F1E6E668D00D5380E /* CALayer+WWZ.m in Sources */,

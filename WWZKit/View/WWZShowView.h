@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, WWZShowViewAnimateType) {
 @property (nonatomic, assign, getter=isTapEnabled) BOOL tapEnabled;
 
 /**
- *  空白区域背景颜色, default is [UIColor colorWithWhite:0 alpha:0.1]
+ *  空白区域背景颜色, default is [UIColor colorWithWhite:0 alpha:0.3]
  */
 @property (nonatomic, strong) UIColor *backColor;
 
