@@ -9,19 +9,30 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationBar (WWZ)
+
+/**
+ *  设置标题
+ */
+- (void)wwz_setTitleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont;
+
 /**
  *  设置背景颜色
  */
 - (void)wwz_setBackgroundColor:(UIColor *)color;
 
 /**
- *  设置文本颜色和字体
+ *  是否隐藏下面线
  */
-- (void)wwz_setTitleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont;
+- (void)wwz_setShadowImage:(BOOL)isHidden;
 
 /**
- *  去除导航栏下黑线
+ *  还原，viewWillDisAppear调用
  */
-- (void)wwz_noShadowImage;
+- (void)wwz_reset;
+
+/**
+ *  设置tabbar内所有视图的alpha
+ */
+- (void)wwz_setElementAlpha:(CGFloat)alpha;
 
 @end
