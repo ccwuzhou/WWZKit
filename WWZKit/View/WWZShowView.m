@@ -54,7 +54,7 @@
     containButton.backgroundColor = self.backColor;
     
     if (self.isTapEnabled) {
-        [containButton addTarget:self action:@selector(wwz_dismiss) forControlEvents:UIControlEventTouchUpInside];
+        [containButton addTarget:self action:@selector(wwz_dismissCompletion:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     [containButton addSubview:self];

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183CBEF71EBB563000693604 /* WWZSegementScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 183CBEF31EBB563000693604 /* WWZSegementScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		183CBEF81EBB563000693604 /* WWZSegementScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CBEF41EBB563000693604 /* WWZSegementScrollView.m */; };
+		183CBEF91EBB563000693604 /* WWZSegementView.h in Headers */ = {isa = PBXBuildFile; fileRef = 183CBEF51EBB563000693604 /* WWZSegementView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		183CBEFA1EBB563000693604 /* WWZSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CBEF61EBB563000693604 /* WWZSegementView.m */; };
 		61BDE3AC06846479551E5C22 /* libPods-WWZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */; };
 		B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DEE1E6F8E4A0005256A /* UIVisualEffectView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0206DF11E6F8E4A0005256A /* UIVisualEffectView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B0206DEF1E6F8E4A0005256A /* UIVisualEffectView+WWZ.m */; };
@@ -93,6 +97,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183CBEF31EBB563000693604 /* WWZSegementScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZSegementScrollView.h; sourceTree = "<group>"; };
+		183CBEF41EBB563000693604 /* WWZSegementScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZSegementScrollView.m; sourceTree = "<group>"; };
+		183CBEF51EBB563000693604 /* WWZSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZSegementView.h; sourceTree = "<group>"; };
+		183CBEF61EBB563000693604 /* WWZSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZSegementView.m; sourceTree = "<group>"; };
 		3CF8E33EF505E664CE7D049C /* Pods-WWZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WWZKit/Pods-WWZKit.release.xcconfig"; sourceTree = "<group>"; };
 		AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WWZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0206DEE1E6F8E4A0005256A /* UIVisualEffectView+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIVisualEffectView+WWZ.h"; sourceTree = "<group>"; };
@@ -355,6 +363,10 @@
 				B094F18E1E6E669800D5380E /* WWZTableHeaderView.m */,
 				B094F18F1E6E669800D5380E /* WWZTimePickerView.h */,
 				B094F1901E6E669800D5380E /* WWZTimePickerView.m */,
+				183CBEF51EBB563000693604 /* WWZSegementView.h */,
+				183CBEF61EBB563000693604 /* WWZSegementView.m */,
+				183CBEF31EBB563000693604 /* WWZSegementScrollView.h */,
+				183CBEF41EBB563000693604 /* WWZSegementScrollView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,6 +418,8 @@
 				B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */,
 				B0206DF41E6F99A20005256A /* UITextField+WWZ.h in Headers */,
 				B0206DF81E6F9A3F0005256A /* UIBarButtonItem+WWZ.h in Headers */,
+				183CBEF91EBB563000693604 /* WWZSegementView.h in Headers */,
+				183CBEF71EBB563000693604 /* WWZSegementScrollView.h in Headers */,
 				B094F1931E6E669800D5380E /* WWZSwipeButton.h in Headers */,
 				B094F1501E6E668D00D5380E /* UIAlertView+WWZ.h in Headers */,
 			);
@@ -550,9 +564,11 @@
 				B094F1A21E6E669800D5380E /* WWZTableViewController.m in Sources */,
 				B094F1601E6E668D00D5380E /* UIView+WWZ.m in Sources */,
 				B094F1A81E6E669800D5380E /* WWZReusableModel.m in Sources */,
+				183CBEFA1EBB563000693604 /* WWZSegementView.m in Sources */,
 				B094F14F1E6E668D00D5380E /* CALayer+WWZ.m in Sources */,
 				B094F1941E6E669800D5380E /* WWZSwipeButton.m in Sources */,
 				B094F1AC1E6E669800D5380E /* WWZActionSheetView.m in Sources */,
+				183CBEF81EBB563000693604 /* WWZSegementScrollView.m in Sources */,
 				B0206DF11E6F8E4A0005256A /* UIVisualEffectView+WWZ.m in Sources */,
 				B094F1C01E6E669800D5380E /* WWZTipView.m in Sources */,
 			);

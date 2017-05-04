@@ -78,7 +78,6 @@
  *  WWZMenuPopover
  *
  *  @param viewWidth   视图宽度
- *  @param anchorPoint 锚点坐标, default is right top point
  *  @param titles      titles
  *  @param imageNames  imageNames
  *
@@ -91,7 +90,6 @@
  *  WWZMenuPopover
  *
  *  @param viewWidth   视图宽度
- *  @param anchorPoint 锚点坐标
  *  @param titles      titles
  *  @param imageNames  imageNames
  *

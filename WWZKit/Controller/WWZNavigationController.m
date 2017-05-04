@@ -98,8 +98,6 @@
 
 /**
  *  设置导航栏透明度
- *
- *  @param alpha
  */
 - (void)wwz_setBackgroundAlpha:(CGFloat)alpha{
     
@@ -108,8 +106,6 @@
 
 /**
  *  设置导航栏背景颜色
- *
- *  @param color
  */
 - (void)wwz_setBackgroundColor:(UIColor *)color{
     

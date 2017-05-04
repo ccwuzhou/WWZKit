@@ -13,7 +13,7 @@
 /**
  *  UICollectionViewFlowLayout
  *
- *  @param inset           sectionInset
+ *  @param sectionInset    sectionInset
  *  @param itemCount       itemCount
  *  @param lineSpace       minimumLineSpacing
  *  @param itemSpace       minimumInteritemSpacing
@@ -30,7 +30,7 @@
 /**
  *  UICollectionViewFlowLayout
  *
- *  @param inset           sectionInset
+ *  @param sectionInset    sectionInset
  *  @param itemSize        itemSize
  *  @param lineSpace       minimumLineSpacing
  *  @param itemSpace       minimumInteritemSpacing

@@ -20,7 +20,7 @@
  *
  *  @param title           title
  *  @param text            text
- *  @param placeHolderText placeHolder text
+ *  @param placeHolder     placeHolder
  *
  *  @return input view
  */

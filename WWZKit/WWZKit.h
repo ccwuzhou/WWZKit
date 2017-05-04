@@ -45,4 +45,7 @@ FOUNDATION_EXPORT const unsigned char WWZKitVersionString[];
 #import "WWZTableHeaderView.h"
 #import "WWZCollectionReusableView.h"
 
+#import "WWZSegementView.h"
+#import "WWZSegementView.h"
+
 #import "UIKit+WWZ.h"
