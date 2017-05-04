@@ -46,6 +46,6 @@ FOUNDATION_EXPORT const unsigned char WWZKitVersionString[];
 #import "WWZCollectionReusableView.h"
 
 #import "WWZSegementView.h"
-#import "WWZSegementView.h"
+#import "WWZSegementScrollView.h"
 
 #import "UIKit+WWZ.h"
