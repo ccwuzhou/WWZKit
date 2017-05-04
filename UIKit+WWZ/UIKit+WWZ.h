@@ -26,4 +26,5 @@
 #import "UIVisualEffectView+WWZ.h"
 #import "UIBarButtonItem+WWZ.h"
 #import "UITextField+WWZ.h"
+#import "UIAlertController+WWZ.h"
 #endif /* WWZKit_h */
