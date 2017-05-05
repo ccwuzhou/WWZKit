@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
+		1803DFF71EAC4C5600515ED6 /* UIAlertController+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = 1803DFF51EAC4C5600515ED6 /* UIAlertController+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1803DFF81EAC4C5600515ED6 /* UIAlertController+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803DFF61EAC4C5600515ED6 /* UIAlertController+WWZ.m */; };
 		183CBEF71EBB563000693604 /* WWZSegementScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 183CBEF31EBB563000693604 /* WWZSegementScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		183CBEF81EBB563000693604 /* WWZSegementScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CBEF41EBB563000693604 /* WWZSegementScrollView.m */; };
 		183CBEF91EBB563000693604 /* WWZSegementView.h in Headers */ = {isa = PBXBuildFile; fileRef = 183CBEF51EBB563000693604 /* WWZSegementView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		183CBEFA1EBB563000693604 /* WWZSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CBEF61EBB563000693604 /* WWZSegementView.m */; };
-		1803DFF71EAC4C5600515ED6 /* UIAlertController+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = 1803DFF51EAC4C5600515ED6 /* UIAlertController+WWZ.h */; };
-		1803DFF81EAC4C5600515ED6 /* UIAlertController+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803DFF61EAC4C5600515ED6 /* UIAlertController+WWZ.m */; };
-
 		61BDE3AC06846479551E5C22 /* libPods-WWZKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */; };
 		B0206DF01E6F8E4A0005256A /* UIVisualEffectView+WWZ.h in Headers */ = {isa = PBXBuildFile; fileRef = B0206DEE1E6F8E4A0005256A /* UIVisualEffectView+WWZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0206DF11E6F8E4A0005256A /* UIVisualEffectView+WWZ.m in Sources */ = {isa = PBXBuildFile; fileRef = B0206DEF1E6F8E4A0005256A /* UIVisualEffectView+WWZ.m */; };
@@ -101,15 +99,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
+		1803DFF51EAC4C5600515ED6 /* UIAlertController+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+WWZ.h"; sourceTree = "<group>"; };
+		1803DFF61EAC4C5600515ED6 /* UIAlertController+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+WWZ.m"; sourceTree = "<group>"; };
 		183CBEF31EBB563000693604 /* WWZSegementScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZSegementScrollView.h; sourceTree = "<group>"; };
 		183CBEF41EBB563000693604 /* WWZSegementScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZSegementScrollView.m; sourceTree = "<group>"; };
 		183CBEF51EBB563000693604 /* WWZSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWZSegementView.h; sourceTree = "<group>"; };
 		183CBEF61EBB563000693604 /* WWZSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWZSegementView.m; sourceTree = "<group>"; };
-
-		1803DFF51EAC4C5600515ED6 /* UIAlertController+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+WWZ.h"; sourceTree = "<group>"; };
-		1803DFF61EAC4C5600515ED6 /* UIAlertController+WWZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+WWZ.m"; sourceTree = "<group>"; };
-
 		3CF8E33EF505E664CE7D049C /* Pods-WWZKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WWZKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WWZKit/Pods-WWZKit.release.xcconfig"; sourceTree = "<group>"; };
 		AE3830BCE557BEA409AA0A0D /* libPods-WWZKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WWZKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0206DEE1E6F8E4A0005256A /* UIVisualEffectView+WWZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIVisualEffectView+WWZ.h"; sourceTree = "<group>"; };
@@ -393,7 +388,6 @@
 				B094F1B51E6E669800D5380E /* WWZShowView.h in Headers */,
 				B094F1A91E6E669800D5380E /* WWZSiriWaveformView.h in Headers */,
 				B094F1341E6E667900D5380E /* WWZKit.h in Headers */,
-				1803DFF71EAC4C5600515ED6 /* UIAlertController+WWZ.h in Headers */,
 				B094F19F1E6E669800D5380E /* WWZTabBarController.h in Headers */,
 				B094F1971E6E669800D5380E /* WWZTableViewCell.h in Headers */,
 				B094F1A51E6E669800D5380E /* WWZAngle.h in Headers */,
@@ -432,6 +426,7 @@
 				B0206DF81E6F9A3F0005256A /* UIBarButtonItem+WWZ.h in Headers */,
 				183CBEF91EBB563000693604 /* WWZSegementView.h in Headers */,
 				183CBEF71EBB563000693604 /* WWZSegementScrollView.h in Headers */,
+				1803DFF71EAC4C5600515ED6 /* UIAlertController+WWZ.h in Headers */,
 				B094F1931E6E669800D5380E /* WWZSwipeButton.h in Headers */,
 				B094F1501E6E668D00D5380E /* UIAlertView+WWZ.h in Headers */,
 			);

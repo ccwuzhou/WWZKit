@@ -38,7 +38,7 @@
 
 @property (nonatomic, strong) UIButton *selButton;
 
-@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, weak) UIView *lineView;
 
 @end
 
@@ -66,7 +66,8 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     self.contentSize = self.size;
     self.scrollEnabled = NO;
     
-    self.lineHeight = 2;
+    _lineHeight = 2;
+    _lineYSpace = 5;
     
     [self addTitleButtons];
 }
@@ -95,14 +96,6 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     }
 }
 
-- (void)setFrame:(CGRect)frame{
-
-    [super setFrame:frame];
-    
-    [self reloadContentView];
-}
-
-
 - (void)reloadContentView{
 
     for (int i = 0; i < self.titles.count; i++) {
@@ -111,34 +104,42 @@ static int const SEGEMENT_BUTTON_TAG = 99;
         
         sender.frame = CGRectMake(i*self.cellWidth, 0, self.cellWidth, self.height);
         
-        if (i == 0) {
-            
-            if (self.segementType == WWZSegementTypeBottomLine) {
-                _lineView.frame = CGRectMake((sender.width-self.lineView.width)*0.5, sender.height-8, self.lineView.width, self.lineHeight);
-            }
-        }
+        [self moveLineViewAnimation:NO];
     }
 }
 
+/**
+ *  移动线
+ */
+- (void)moveLineViewAnimation:(BOOL)animate{
+
+    if (self.segementType != WWZSegementTypeBottomLine) return;
+    
+    NSTimeInterval duration = animate ? 0.3 : 0;
+    
+    CGSize stringSize = [self p_stringSizeWithString:_selButton.currentTitle font:_selButton.font maxSize:_selButton.size];
+    
+    [UIView animateWithDuration:duration animations:^{
+  
+        self.lineView.width = stringSize.width;
+        self.lineView.centerX = _selButton.centerX;
+        self.lineView.y = (_selButton.height+stringSize.height)*0.5+self.lineYSpace;
+    }];
+}
+
+#pragma mark - 点击事件
 - (void)clickButtonAtIndex:(UIButton *)sender{
 
-    if (sender == _selButton) {
-        return;
-    }
+    if (sender == _selButton) return;
     
     _selButton.selected = NO;
-    
     sender.selected = YES;
-    
     _selButton = sender;
     
-    if (self.segementType == WWZSegementTypeBottomLine) {
+    // 移动线
+    [self moveLineViewAnimation:YES];
     
-        [UIView animateWithDuration:0.3 animations:^{
-            self.lineView.x = _selButton.x+(_selButton.width-self.lineView.width)*0.5;
-        }];
-    }
-    
+    // 代理回调
     if ([self.segementDelegate respondsToSelector:@selector(segementView:clickButtonAtIndex:)]) {
         [self.segementDelegate segementView:self clickButtonAtIndex:(int)sender.tag - SEGEMENT_BUTTON_TAG];
     }
@@ -153,16 +154,15 @@ static int const SEGEMENT_BUTTON_TAG = 99;
 
     _segementType = segementType;
     
-    if (self.segementType == WWZSegementTypeBottomLine) {
-        
-        CGFloat stringW = [self p_stringSizeWithString:_selButton.titleLabel.text font:_selButton.titleLabel.font maxSize:_selButton.size].width;
-        
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake((_selButton.width-stringW)*0.5, _selButton.height-8, stringW, self.lineHeight)];
-        lineView.backgroundColor = [UIColor redColor];
-        [self addSubview:lineView];
-        
-        _lineView = lineView;
-    }
+    if (self.segementType != WWZSegementTypeBottomLine) return;
+
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, _selButton.height-self.lineYSpace, 0, self.lineHeight)];
+    lineView.backgroundColor = [UIColor redColor];
+    [self addSubview:lineView];
+    
+    _lineView = lineView;
+    
+    [self moveLineViewAnimation:NO];
 }
 
 /**
@@ -180,7 +180,9 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     
     [self reloadContentView];
 }
-
+/**
+ *  底部线高
+ */
 - (void)setLineHeight:(CGFloat)lineHeight{
 
     _lineHeight = lineHeight;
@@ -190,28 +192,31 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     }
 }
 /**
+ *  底部线与文字的间隙
+ */
+- (void)setLineYSpace:(CGFloat)lineYSpace{
+
+    _lineYSpace = lineYSpace;
+    
+    if (self.segementType == WWZSegementTypeBottomLine) {
+        
+        [self moveLineViewAnimation:NO];
+    }
+}
+/**
  *  选中按钮
  */
 - (void)selectCellAtIndex:(int)index{
 
     UIButton *sender = [self viewWithTag:index+SEGEMENT_BUTTON_TAG];
     
-    if (sender == _selButton) {
-        return;
-    }
+    if (sender == _selButton) return;
     
     _selButton.selected = NO;
-    
     sender.selected = YES;
-    
     _selButton = sender;
     
-    if (self.segementType == WWZSegementTypeBottomLine) {
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            self.lineView.x = _selButton.x+(_selButton.width-self.lineView.width)*0.5;
-        }];
-    }
+    [self moveLineViewAnimation:YES];
 }
 
 /**
@@ -238,10 +243,8 @@ static int const SEGEMENT_BUTTON_TAG = 99;
  */
 - (void)setNBImage:(UIImage *)nBImage sBImage:(UIImage *)sBImage{
 
-    if (self.segementType != WWZSegementTypeCustom) {
-        
-        return;
-    }
+    if (self.segementType != WWZSegementTypeCustom) return;
+    
     
     for (int i = 0; i < self.titles.count; i++) {
         
@@ -260,10 +263,18 @@ static int const SEGEMENT_BUTTON_TAG = 99;
 #pragma mark - help
 - (CGSize)p_stringSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize{
     
+    if (!string) {
+        return CGSizeZero;
+    }
     NSStringDrawingOptions options =  NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
     CGRect rectToFit = [string boundingRectWithSize:maxSize options:options attributes:@{NSFontAttributeName:font} context:nil];
     
     // 向上取整
     return CGSizeMake(ceilf(rectToFit.size.width), ceilf(rectToFit.size.height));
+}
+
+- (void)dealloc{
+    
+    NSLog(@"WWZSegementView dealloc");
 }
 @end

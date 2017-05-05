@@ -6,14 +6,18 @@
 //  Copyright © 2017年 wwz. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@class WWZSegementView;
+#import "WWZSegementView.h"
 
 @interface WWZSegementScrollView : UIView
 
-@property (nonatomic, strong) WWZSegementView *segementView;
+/**
+ *  控制器集合
+ */
+@property (nonatomic, strong) NSArray *segementControllers;
 
-- (instancetype)initWithFrame:(CGRect)frame controllers:(NSArray *)controllers;
+/**
+ *  切换segementView，需先设置控制器
+ */
+@property (nonatomic, strong, readonly) WWZSegementView *segementView;
 
 @end

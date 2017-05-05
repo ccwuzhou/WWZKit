@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <WWZKit/WWZKit.h>
 
+#import "TestViewController.h"
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -20,8 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView = [UITableView wwz_tableViewWithFrame:self.view.bounds dataSource:self delegate:self];
-    [self.view addSubview:self.tableView];
+//    self.tableView = [UITableView wwz_tableViewWithFrame:self.view.bounds dataSource:self delegate:self];
+//    [self.view addSubview:self.tableView];
+
+    
+   
     
 }
 
@@ -57,11 +60,14 @@
 //    }];
 //    [tipView wwz_showCompletion:nil];
     
-    WWZInputView *inputView = [[WWZInputView alloc] initWithTitle:@"确定确定确定" text:@"123" placeHolder:@"123" buttonTitles:@[@"取消", @"确定"] clickButtonAtIndex:^(NSString *inputText, int index) {
-       
-        NSLog(@"%@-%d", inputText, index);
-    }];
-    [inputView wwz_showCompletion:nil];
+//    WWZInputView *inputView = [[WWZInputView alloc] initWithTitle:@"确定确定确定" text:@"123" placeHolder:@"123" buttonTitles:@[@"取消", @"确定"] clickButtonAtIndex:^(NSString *inputText, int index) {
+//       
+//        NSLog(@"%@-%d", inputText, index);
+//    }];
+//    [inputView wwz_showCompletion:nil];
+    
+    TestViewController *vc = [[TestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

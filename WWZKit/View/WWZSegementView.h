@@ -32,14 +32,20 @@ typedef NS_ENUM(NSUInteger, WWZSegementType) {
 @property (nonatomic, assign) WWZSegementType segementType;
 
 /**
- *  单个cell宽
+ *  单个cell宽，默认平分self.width
  */
 @property (nonatomic, assign) CGFloat cellWidth;
 
 /**
- *  底部线高
+ *  底部线高,default is 2
  */
 @property (nonatomic, assign) CGFloat lineHeight;
+
+/**
+ *  底部线与文字的间隙,default is 5
+ */
+@property (nonatomic, assign) CGFloat lineYSpace;
+
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles;
 
@@ -52,7 +58,6 @@ typedef NS_ENUM(NSUInteger, WWZSegementType) {
  *  设置文字属性
  */
 - (void)setTitleFont:(UIFont *)font nColor:(UIColor *)nColor sColor:(UIColor *)sColor;
-
 
 /**
  *  设置背景图片，仅当WWZSegementTypeCustom时可用

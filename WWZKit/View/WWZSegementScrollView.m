@@ -8,12 +8,9 @@
 //
 
 #import "WWZSegementScrollView.h"
-#import "WWZSegementView.h"
 #import "UIView+WWZ.h"
 
 @interface WWZSegementScrollView ()<WWZSegementViewDelegate, UIScrollViewDelegate>
-
-@property (nonatomic, strong) NSArray *segementControllers;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -21,19 +18,27 @@
 
 @implementation WWZSegementScrollView
 
-- (instancetype)initWithFrame:(CGRect)frame controllers:(NSArray *)controllers
+@synthesize segementView = _segementView;
+
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.segementControllers = controllers;
-        
-        [self addSubview:self.segementView];
-        
-        [self addSubview:self.scrollView];
-        
     }
     return self;
+}
+
+- (void)setSegementControllers:(NSArray *)segementControllers{
+
+    if (_segementControllers) {
+        return;
+    }
+    _segementControllers = segementControllers;
+    
+    [self addSubview:self.segementView];
+    
+    [self addSubview:self.scrollView];
 }
 
 #pragma mark - WWZSegementViewDelegate
@@ -44,6 +49,15 @@
     }];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    if (scrollView != self.scrollView) {
+        return;
+    }
+    
+    
+    
+}
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
     if (scrollView != self.scrollView) {
@@ -53,7 +67,6 @@
     int index = scrollView.contentOffset.x / self.scrollView.width;
     
     [self.segementView selectCellAtIndex:index];
-    
 }
 #pragma mark - getter
 
@@ -102,5 +115,10 @@
         }
     }
     return _scrollView;
+}
+
+- (void)dealloc{
+
+    NSLog(@"WWZSegementScrollView dealloc");
 }
 @end
