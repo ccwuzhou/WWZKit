@@ -287,8 +287,8 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     return CGSizeMake(ceilf(rectToFit.size.width), ceilf(rectToFit.size.height));
 }
 
-- (void)dealloc{
-    
-    NSLog(@"WWZSegementView dealloc");
-}
+//- (void)dealloc{
+//    
+//    NSLog(@"WWZSegementView dealloc");
+//}
 @end

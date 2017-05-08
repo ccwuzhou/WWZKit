@@ -117,8 +117,8 @@
     return _scrollView;
 }
 
-- (void)dealloc{
-
-    NSLog(@"WWZSegementScrollView dealloc");
-}
+//- (void)dealloc{
+//
+//    NSLog(@"WWZSegementScrollView dealloc");
+//}
 @end
