@@ -165,6 +165,20 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     [self moveLineViewAnimation:NO];
 }
 
+- (void)setFrame:(CGRect)frame{
+
+    [super setFrame:frame];
+    
+    [self reloadContentView];
+}
+
+- (void)setHeight:(CGFloat)height{
+
+    [super setHeight:height];
+    
+    [self reloadContentView];
+}
+
 /**
  *  单个cell宽
  */
