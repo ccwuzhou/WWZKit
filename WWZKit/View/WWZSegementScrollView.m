@@ -14,31 +14,28 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
+@property (nonatomic, assign) CGRect segementViewFrame;
+
 @end
 
 @implementation WWZSegementScrollView
 
 @synthesize segementView = _segementView;
+@synthesize segementControllers = _segementControllers;
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame segementViewFrame:(CGRect)segementViewFrame  controllers:(NSArray *)controllers
 {
     self = [super initWithFrame:frame];
     if (self) {
         
+        _segementControllers = controllers;
+        _segementViewFrame = segementViewFrame;
+        
+        [self addSubview:self.segementView];
+        
+        [self addSubview:self.scrollView];
     }
     return self;
-}
-
-- (void)setSegementControllers:(NSArray *)segementControllers{
-
-    if (_segementControllers) {
-        return;
-    }
-    _segementControllers = segementControllers;
-    
-    [self addSubview:self.segementView];
-    
-    [self addSubview:self.scrollView];
 }
 
 #pragma mark - WWZSegementViewDelegate
@@ -54,9 +51,6 @@
     if (scrollView != self.scrollView) {
         return;
     }
-    
-    
-    
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
@@ -81,7 +75,7 @@
             [mTitles addObject:vc.title ? vc.title : @""];
         }
         
-        _segementView = [[WWZSegementView alloc] initWithFrame:CGRectMake(0, 0, self.width, 40) titles:mTitles];
+        _segementView = [[WWZSegementView alloc] initWithFrame:self.segementViewFrame titles:mTitles];
         _segementView.segementDelegate = self;
 
     }

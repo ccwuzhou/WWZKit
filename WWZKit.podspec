@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WWZKit"
-  s.version      = "1.2.3"
+  s.version      = "1.2.4"
   s.summary      = "A short description of WWZKit."
 
   s.homepage     = "https://github.com/ccwuzhou/WWZKit"

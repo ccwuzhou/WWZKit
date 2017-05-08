@@ -117,7 +117,7 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     
     NSTimeInterval duration = animate ? 0.3 : 0;
     
-    CGSize stringSize = [self p_stringSizeWithString:_selButton.currentTitle font:_selButton.font maxSize:_selButton.size];
+    CGSize stringSize = [self p_stringSizeWithString:_selButton.currentTitle font:_selButton.titleLabel.font maxSize:_selButton.size];
     
     [UIView animateWithDuration:duration animations:^{
   
@@ -163,20 +163,6 @@ static int const SEGEMENT_BUTTON_TAG = 99;
     _lineView = lineView;
     
     [self moveLineViewAnimation:NO];
-}
-
-- (void)setFrame:(CGRect)frame{
-
-    [super setFrame:frame];
-    
-    [self reloadContentView];
-}
-
-- (void)setHeight:(CGFloat)height{
-
-    [super setHeight:height];
-    
-    [self reloadContentView];
 }
 
 /**
