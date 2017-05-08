@@ -81,7 +81,7 @@
             [mTitles addObject:vc.title ? vc.title : @""];
         }
         
-        _segementView = [[WWZSegementView alloc] initWithFrame:CGRectMake(0, 0, self.width, 50) titles:mTitles];
+        _segementView = [[WWZSegementView alloc] initWithFrame:CGRectMake(0, 0, self.width, 40) titles:mTitles];
         _segementView.segementDelegate = self;
 
     }

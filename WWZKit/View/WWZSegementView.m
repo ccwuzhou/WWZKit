@@ -75,13 +75,13 @@ static int const SEGEMENT_BUTTON_TAG = 99;
 
 - (void)addTitleButtons{
 
-    CGFloat buttonW = self.width / self.titles.count;
+    _cellWidth = self.width / self.titles.count;
     
     for (int i = 0; i < self.titles.count; i++) {
         
         NSString *title = self.titles[i];
         
-        WWZSegementButton *button = [WWZSegementButton wwz_buttonWithFrame:CGRectMake(i*buttonW, 0, buttonW, self.height) nTitle:title sTitle:title tFont:[UIFont systemFontOfSize:15] nColor:[UIColor blackColor] sColor:[UIColor redColor]];
+        WWZSegementButton *button = [WWZSegementButton wwz_buttonWithFrame:CGRectMake(i*_cellWidth, 0, _cellWidth, self.height) nTitle:title sTitle:title tFont:[UIFont systemFontOfSize:15] nColor:[UIColor blackColor] sColor:[UIColor redColor]];
         
         button.tag = SEGEMENT_BUTTON_TAG + i;
         [button addTarget:self action:@selector(clickButtonAtIndex:) forControlEvents:UIControlEventTouchUpInside];
